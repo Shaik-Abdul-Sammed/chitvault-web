@@ -87,7 +87,8 @@ html {
 
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.65;
+  font-size: 16.5px;
+  line-height: 1.7;
   color: var(--dark);
   background: #FFFFFF;
   -webkit-font-smoothing: antialiased;
@@ -157,6 +158,15 @@ p.sub-title {
   max-width: 740px;
   margin: 0 auto 48px;
   line-height: 1.65;
+}
+
+.callout-box {
+  background: #F0FDF4;
+  border-left: 4px solid #10B981;
+  padding: 16px 20px;
+  margin: 16px 0;
+  border-radius: 0 10px 10px 0;
+  text-align: left;
 }
 
 /* Global Buttons & CTA Elements */
@@ -1119,17 +1129,18 @@ p.sub-title {
 }
 
 .comparison-table th.highlight-col {
-  background: var(--primary);
-  color: #FFFFFF;
+  background: #00695C !important;
+  color: #FFFFFF !important;
   font-size: 18px;
+  font-weight: 800;
 }
 
 .comparison-table td.highlight-col {
-  background: rgba(0, 105, 92, 0.08);
+  background: #00695C !important;
+  color: #FFFFFF !important;
   font-weight: 700;
-  color: var(--primary-dark);
-  border-left: 2px solid var(--primary);
-  border-right: 2px solid var(--primary);
+  border-left: 2px solid #004D40;
+  border-right: 2px solid #004D40;
 }
 
 .comparison-table tr:last-child td {
@@ -1849,20 +1860,18 @@ details p {
           <span>🇮🇳</span>
           <span>Trusted by chit managers across India</span>
         </div>
-        <h1 class="hero-title">Manage your chit fund. Offline. In your language.</h1>
-        <p class="hero-sub">
-          Track payments, announce winners, send reminders from your phone. No internet needed. No monthly fees. Data stays on your device.
-        </p>
+        <h1 class="hero-title">The free chit fund app that works without internet.</h1>
+        <p class="hero-sub">Stop using paper registers. Track payments, announce winners, and send WhatsApp reminders from your phone. No monthly fees.</p>
         <div class="hero-cta-group">
           <div class="hero-cta-btn-wrap">
             <a href="downloads/chitvault-latest.apk" download class="btn btn-light" style="font-size: 18px; padding: 18px 36px;">
               <span>📥</span>
               <span>Download Free APK (48 MB)</span>
             </a>
-            <span class="hero-subnote">Android 6.0+ · No sign-up · Works offline</span>
+            <span class="hero-subnote">Free forever for individual managers. No sign-up.</span>
           </div>
-          <a href="https://wa.me/919010150809?text=Hi%2C%20we%20are%20a%20chit%20fund%20company%20interested%20in%20a%2015-minute%20demo%20of%20ChitVault" target="_blank" rel="noopener" class="hero-secondary-link">
-            Chit fund company? Book a 15-min demo →
+          <a href="#for-companies" class="hero-secondary-link" style="font-size: 15px;">
+            Run a chit fund company? Book a demo →
           </a>
         </div>
       </div>
@@ -1919,6 +1928,14 @@ details p {
   </div>
 </section>
 
+<!-- B2B COMPANY TRAFFIC SPLIT BANNER -->
+<div style="background: #f8fafc; padding: 16px; text-align: center; border-bottom: 1px solid #e2e8f0;">
+  <p style="margin: 0; font-size: 15px; color: #64748b;">
+    <strong>Running a registered chit fund company?</strong>
+    <a href="#for-companies" style="color: #00695c; font-weight: bold; text-decoration: underline; margin-left: 8px;">See our enterprise plans →</a>
+  </p>
+</div>
+
 <!-- SECTION 3: TRUST STRIP -->
 <section id="trust">
   <div class="trust-signals-flex">
@@ -1949,7 +1966,7 @@ details p {
 <section id="problem">
   <div class="container text-center">
     <h2>If you're still using a paper register, this is for you.</h2>
-    <p class="sub-title">Why hundreds of chit fund and committee managers are switching from traditional paper books to ChitVault.</p>
+    <p class="sub-title"><strong>Paper registers cost you hours of unpaid admin.</strong> Here is how ChitVault replaces paper with speed.</p>
     
     <div class="problem-solution-grid text-center" style="text-align: left;">
       <div class="problem-col">
@@ -1957,50 +1974,32 @@ details p {
           <span style="font-size: 28px;">📓</span>
           <h3>The Paper Register Trap</h3>
         </div>
-        <div class="comparison-list">
-          <div class="comparison-item">
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px;">
+          <li class="comparison-item">
             <span class="comparison-icon">📓</span>
-            <div>
-              <strong>Paper register</strong> — Pages get worn, torn, coffee-stained, or misplaced over months of use.
-              <span class="comparison-item-sub">Physical paper registers degrade quickly in field conditions, leading to missing sheets and unreadable balances.</span>
-            </div>
-          </div>
-          <div class="comparison-item">
+            <div><strong>Paper register:</strong> Pages get torn, water-damaged, or lost over time.</div>
+          </li>
+          <li class="comparison-item">
             <span class="comparison-icon">📵</span>
-            <div>
-              <strong>Loses data</strong> — No backup when notebooks are lost, stolen, or damaged in transit.
-              <span class="comparison-item-sub">One misplaced notebook destroys years of customer goodwill, payment history, and credit records.</span>
-            </div>
-          </div>
-          <div class="comparison-item">
+            <div><strong>Loses data:</strong> No backup exists when physical notebooks go missing.</div>
+          </li>
+          <li class="comparison-item">
             <span class="comparison-icon">💬</span>
-            <div>
-              <strong>Manual WhatsApp</strong> — Spending hours typing out reminder messages to individual members.
-              <span class="comparison-item-sub">Constantly copying account numbers, calculating dues manually, and drafting repetitive reminder messages.</span>
-            </div>
-          </div>
-          <div class="comparison-item">
+            <div><strong>Manual WhatsApp:</strong> Hours wasted copying and typing reminder messages.</div>
+          </li>
+          <li class="comparison-item">
             <span class="comparison-icon">📊</span>
-            <div>
-              <strong>Manual math</strong> — High risk of calculation mistakes in dividends, bids, and commissions.
-              <span class="comparison-item-sub">A simple dividend calculation mistake creates friction, awkward arguments, and distrust among members.</span>
-            </div>
-          </div>
-          <div class="comparison-item">
+            <div><strong>Manual math:</strong> High risk of miscalculated dividends and disputes.</div>
+          </li>
+          <li class="comparison-item">
             <span class="comparison-icon">📄</span>
-            <div>
-              <strong>Lost receipts</strong> — Disputes arise when members claim they paid cash and receipts are lost.
-              <span class="comparison-item-sub">Without instant timestamped receipts with UTR references, verbal disputes can damage relationships.</span>
-            </div>
-          </div>
-          <div class="comparison-item">
+            <div><strong>Lost receipts:</strong> No proof when members claim they already paid cash.</div>
+          </li>
+          <li class="comparison-item">
             <span class="comparison-icon">🕐</span>
-            <div>
-              <strong>Hours of admin</strong> — Spending entire evenings reconciling books instead of growing your business.
-              <span class="comparison-item-sub">Managers spend 2 to 3 hours every night tallying totals instead of spending quality time with family.</span>
-            </div>
-          </div>
-        </div>
+            <div><strong>Hours of admin:</strong> Spending late nights manually reconciling accounts.</div>
+          </li>
+        </ul>
       </div>
 
       <div class="solution-col">
@@ -2008,50 +2007,32 @@ details p {
           <span style="font-size: 28px;">📱</span>
           <h3>The ChitVault Solution</h3>
         </div>
-        <div class="comparison-list">
-          <div class="comparison-item">
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 16px;">
+          <li class="comparison-item">
             <span class="comparison-icon">📱</span>
-            <div>
-              <strong>Digital, on your phone</strong> — Complete structured records always in your pocket, organized neatly.
-              <span class="comparison-item-sub">Access member ledgers, payment statuses, and group metrics in seconds, even while standing in a busy market.</span>
-            </div>
-          </div>
-          <div class="comparison-item">
+            <div><strong>Digital on your phone:</strong> Clean, structured records accessible anywhere.</div>
+          </li>
+          <li class="comparison-item">
             <span class="comparison-icon">🔐</span>
-            <div>
-              <strong>AES-256 encrypted</strong> — Industry-grade encryption with rolling automatic backups to your SD card or drive.
-              <span class="comparison-item-sub">Your records are fortified with device-level cryptography so no unauthorized person can read your financial books.</span>
-            </div>
-          </div>
-          <div class="comparison-item">
+            <div><strong>AES-256 encrypted:</strong> Automatic weekly backups keep your data completely safe.</div>
+          </li>
+          <li class="comparison-item">
             <span class="comparison-icon">🔔</span>
-            <div>
-              <strong>Auto reminders</strong> — Instant WhatsApp & SMS reminder templates ready in 1 tap.
-              <span class="comparison-item-sub">Personalized reminder templates with member name, exact outstanding balance, and UPI link populated automatically.</span>
-            </div>
-          </div>
-          <div class="comparison-item">
+            <div><strong>Auto reminders:</strong> 1-tap WhatsApp and SMS templates with live due amounts.</div>
+          </li>
+          <li class="comparison-item">
             <span class="comparison-icon">⚙️</span>
-            <div>
-              <strong>Auto winner calc</strong> — Flawless automatic auction, dividend, and interest calculations in seconds.
-              <span class="comparison-item-sub">Enter the winning bid amount, and ChitVault instantly divides the foreman commission and distribution dividend accurately.</span>
-            </div>
-          </div>
-          <div class="comparison-item">
+            <div><strong>Auto winner calc:</strong> Instant auction, dividend, and commission math.</div>
+          </li>
+          <li class="comparison-item">
             <span class="comparison-icon">📄</span>
-            <div>
-              <strong>PDF receipts forever</strong> — Professional stamped PDF payment receipts with UTR verification generated instantly.
-              <span class="comparison-item-sub">Share clean, branded PDF receipts directly over WhatsApp the moment cash or UPI payment is verified.</span>
-            </div>
-          </div>
-          <div class="comparison-item">
+            <div><strong>PDF receipts forever:</strong> Stamped receipts with UTR tracking generated in 1 second.</div>
+          </li>
+          <li class="comparison-item">
             <span class="comparison-icon">⏱️</span>
-            <div>
-              <strong>10 minutes/day</strong> — Record collections on the go and finish all daily chit management in 10 minutes.
-              <span class="comparison-item-sub">Streamlined one-tap workflows give you back your evenings while giving members complete confidence.</span>
-            </div>
-          </div>
-        </div>
+            <div><strong>10 minutes/day:</strong> Settle collections and close your books in minutes.</div>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -2082,8 +2063,13 @@ details p {
       </div>
     </div>
 
-    <div class="reality-callout">
-      <strong>The market is huge. The tools are still stuck in the 1980s.</strong> ChitVault is built for how India actually runs committees — offline, multi-language, mobile-first. Whether you run a community rotating committee in a tier-3 town or manage high-ticket business chits, ChitVault gives you institutional-grade reliability without enterprise complexity.
+    <div class="callout-box" style="max-width: 900px; margin: 0 auto; box-shadow: var(--shadow-sm);">
+      <div style="font-size: 18px; font-weight: 700; color: #065F46; margin-bottom: 6px;">
+        90% of chit funds still use paper registers.
+      </div>
+      <div style="font-size: 15.5px; color: #047857; line-height: 1.6;">
+        ChitVault brings them into the 21st century — <strong>100% offline, multi-language, and mobile-first.</strong>
+      </div>
     </div>
   </div>
 </section>
@@ -2117,33 +2103,33 @@ details p {
 <section id="how">
   <div class="container text-center">
     <h2>How ChitVault Works</h2>
-    <p class="sub-title">Set up in 5 minutes. No complex training, no IT setup, and zero cloud dependency.</p>
+    <p class="sub-title"><strong>Simple 3-step setup.</strong> No tech knowledge needed. Start in 5 minutes.</p>
     
     <div class="how-steps-grid">
       <div class="how-card">
         <div class="step-circle">1</div>
         <h3>Step 1: Download the app</h3>
-        <p>Get the APK. No sign-up. Works on any Android 6.0+ phone.</p>
-        <div style="margin-top: 14px; font-size: 13.5px; color: var(--muted); line-height: 1.5;">
-          Direct 48 MB download. Install in seconds without mandatory registration or verification calls.
+        <p><strong>No sign-up. No login. Just install.</strong></p>
+        <div style="margin-top: 14px; font-size: 14px; color: var(--muted); line-height: 1.5;">
+          Direct 48 MB APK download. Installs on any Android phone without creating an account or password.
         </div>
       </div>
 
       <div class="how-card">
         <div class="step-circle">2</div>
         <h3>Step 2: Create your chit group</h3>
-        <p>Set monthly amount, member count, and duration in 5 minutes.</p>
-        <div style="margin-top: 14px; font-size: 13.5px; color: var(--muted); line-height: 1.5;">
-          Choose auction or lottery models, set foreman commission, and import members directly from phone contacts.
+        <p><strong>Set amount, members, and duration.</strong></p>
+        <div style="margin-top: 14px; font-size: 14px; color: var(--muted); line-height: 1.5;">
+          Enter the monthly installment, add members from your phone contacts, and set auction rules in 2 minutes.
         </div>
       </div>
 
       <div class="how-card">
         <div class="step-circle">3</div>
         <h3>Step 3: Start managing</h3>
-        <p>Record payments, announce winners, send reminders — all offline.</p>
-        <div style="margin-top: 14px; font-size: 13.5px; color: var(--muted); line-height: 1.5;">
-          Issue instant PDF receipts, run monthly auction rounds, and send automatic WhatsApp reminder alerts.
+        <p><strong>Record payments offline. Send WhatsApp reminders.</strong></p>
+        <div style="margin-top: 14px; font-size: 14px; color: var(--muted); line-height: 1.5;">
+          Tap to record collections, calculate winner dividends automatically, and send instant PDF receipts.
         </div>
       </div>
     </div>
@@ -2154,115 +2140,127 @@ details p {
 <section id="features">
   <div class="container text-center">
     <h2>Everything a Chit Manager Needs</h2>
-    <p class="sub-title">One reliable app replaces your paper registers, scattered WhatsApp reminders, and complicated Excel sheets.</p>
+    <p class="sub-title"><strong>One reliable app replaces paper books and messy spreadsheets.</strong> Built for fast field operations.</p>
     
     <div class="features-grid text-center" style="text-align: left;">
       <div class="feature-card">
         <div class="feature-icon-box">📒</div>
         <div class="feature-title">1. Payment Tracking</div>
-        <div class="feature-desc">Cash, UPI, bank. UTR verification.</div>
-        <div class="feature-subpoints">
-          Record partial payments, multiple installments, and cross-reference UTR transaction numbers with zero math errors.
-        </div>
+        <div class="feature-desc"><strong>Cash, UPI, bank.</strong> UTR verification.</div>
+        <ul style="list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>💳 One-tap cash and bank recording</li>
+          <li>🔍 Instant UTR cross-reference</li>
+        </ul>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">🏆</div>
         <div class="feature-title">2. Winner Announcement</div>
-        <div class="feature-desc">Auction, dividend, interest, fixed.</div>
-        <div class="feature-subpoints">
-          Handles reverse bidding, fixed lucky draws, and interest plan schemes with instant automated dividend distribution.
-        </div>
+        <div class="feature-desc"><strong>Auction, dividend, interest, fixed.</strong></div>
+        <ul style="list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>⚡ Instant dividend distribution math</li>
+          <li>📜 Verified auction winner history</li>
+        </ul>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">👥</div>
         <div class="feature-title">3. Member Management</div>
-        <div class="feature-desc">Import from contacts, CSV, or manual.</div>
-        <div class="feature-subpoints">
-          Add 50+ members in seconds from your Android address book. Tag guarantors, nominees, and alternate phone numbers.
-        </div>
+        <div class="feature-desc"><strong>Import from contacts</strong>, CSV, or manual.</div>
+        <ul style="list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>📇 Quick contact book import</li>
+          <li>🛡️ Guarantor and nominee tracking</li>
+        </ul>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">🔔</div>
         <div class="feature-title">4. Smart Reminders</div>
-        <div class="feature-desc">WhatsApp + SMS before every due date.</div>
-        <div class="feature-subpoints">
-          Pre-built localized templates in 11 languages with payment amounts, due dates, and your UPI QR code.
-        </div>
+        <div class="feature-desc"><strong>WhatsApp + SMS</strong> before every due date.</div>
+        <ul style="list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>💬 Pre-filled payment links in WhatsApp</li>
+          <li>⏰ Zero awkward phone calls</li>
+        </ul>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">📊</div>
         <div class="feature-title">5. Reports That Matter</div>
-        <div class="feature-desc">PDFs, statements, defaulter lists.</div>
-        <div class="feature-subpoints">
-          Generate monthly collection summaries, individual member passbooks, and group audit logs ready for printing or sharing.
-        </div>
+        <div class="feature-desc"><strong>PDFs, statements, defaulter lists.</strong></div>
+        <ul style="list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>📄 Instant stamped PDF receipts</li>
+          <li>📑 Exportable monthly collection reports</li>
+        </ul>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">🔒</div>
         <div class="feature-title">6. Data Stays Yours</div>
-        <div class="feature-desc">Encrypted. On-device. Never cloud.</div>
-        <div class="feature-subpoints">
-          Zero remote servers. No third-party data tracking, advertising SDKs, or cloud vulnerabilities. Complete device sovereignty.
-        </div>
+        <div class="feature-desc"><strong>Encrypted. On-device.</strong> Never cloud.</div>
+        <ul style="list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>🔐 Zero remote server storage</li>
+          <li>🛡️ Protected by phone PIN & biometrics</li>
+        </ul>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">🌐</div>
         <div class="feature-title">7. 11 Indian Languages</div>
-        <div class="feature-desc">Hindi, Telugu, Urdu, Tamil, more.</div>
-        <div class="feature-subpoints">
-          Full UI and receipt generation in English, Hindi, Urdu, Telugu, Tamil, Kannada, Malayalam, Bengali, Gujarati, Punjabi, Marathi.
-        </div>
+        <div class="feature-desc"><strong>Hindi, Telugu, Urdu, Tamil</strong>, more.</div>
+        <ul style="list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>🗣️ Work in your mother tongue</li>
+          <li>🌐 Instant language toggle anytime</li>
+        </ul>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">🔐</div>
         <div class="feature-title">8. Encrypted Backups</div>
-        <div class="feature-desc">AES-256. Rolling 5 copies.</div>
-        <div class="feature-subpoints">
-          Automatic weekly snapshots stored securely. Export to SD card, personal Google Drive, or email in 1 tap.
-        </div>
+        <div class="feature-desc"><strong>AES-256.</strong> Rolling 5 copies.</div>
+        <ul style="list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>💾 Automated weekly local backups</li>
+          <li>📤 1-tap export to Google Drive/SD Card</li>
+        </ul>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">👤</div>
         <div class="feature-title">9. Member Self-Service</div>
-        <div class="feature-desc">Members see their own payments, dues.</div>
-        <div class="feature-subpoints">
-          Show transparent member passbook view right on your phone without exposing other members' private information.
-        </div>
+        <div class="feature-desc"><strong>Members see payments and dues.</strong></div>
+        <ul style="list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>📱 Dedicated member passbook view</li>
+          <li>🔒 Privacy protected from other members</li>
+        </ul>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">💳</div>
         <div class="feature-title">10. UPI Payments</div>
-        <div class="feature-desc">Members pay manager in one tap.</div>
-        <div class="feature-subpoints">
-          Generate dynamic and static UPI QR codes linked to PhonePe, Google Pay, Paytm, or BHIM for frictionless dues collection.
-        </div>
+        <div class="feature-desc"><strong>Members pay manager in one tap.</strong></div>
+        <ul style="list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>⚡ Dynamic & static UPI QR codes</li>
+          <li>📲 Direct PhonePe & GPay intent</li>
+        </ul>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">⚡</div>
         <div class="feature-title">11. Works Offline</div>
-        <div class="feature-desc">No internet? No problem.</div>
-        <div class="feature-subpoints">
-          Full app capabilities execute smoothly without internet connection. Perfect for remote rural villages and spotty connectivity.
-        </div>
+        <div class="feature-desc"><strong>No internet? No problem.</strong></div>
+        <ul style="list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>📶 Full functionality without cellular data</li>
+          <li>🌲 Ideal for remote village collections</li>
+        </ul>
       </div>
 
       <div class="feature-card">
         <div class="feature-icon-box">📦</div>
         <div class="feature-title">12. Zero Learning Curve</div>
-        <div class="feature-desc">First group in 5 minutes.</div>
-        <div class="feature-subpoints">
-          Intuitive, uncluttered layout designed specifically for non-technical managers and grassroots committee leaders.
-        </div>
+        <div class="feature-desc"><strong>First group in 5 minutes.</strong></div>
+        <ul style="list-style: none; margin-top: 12px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>👌 Simple interface for non-tech users</li>
+          <li>🚀 Setup without IT assistance</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -2272,73 +2270,55 @@ details p {
 <section id="automation">
   <div class="container text-center">
     <h2>ChitVault Does the Boring Work For You</h2>
-    <p class="sub-title">Every automation runs offline. No server. No monthly cost.</p>
+    <p class="sub-title"><strong>Every automation runs 100% offline.</strong> Zero remote servers and zero monthly software fees.</p>
     
     <div class="automation-grid text-center" style="text-align: left;">
-      <div class="automation-card">
-        <div class="automation-header">
-          <div class="automation-icon">🔔</div>
-          <div class="automation-name">AUTOMATION 1: Due-Date Reminders</div>
-        </div>
-        <div class="automation-meta-item"><strong>What:</strong> Sends WhatsApp/SMS to members 3 days before due date</div>
-        <div class="automation-meta-item"><strong>When:</strong> Runs in background, no user action needed</div>
-        <div class="automation-meta-item" style="color: var(--muted); font-size: 13px;">Uses lightweight local Android alarm scheduling without draining battery.</div>
-        <div class="automation-helps">Helps: You never forget to remind a member again</div>
+      <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🔔</div>
+        <h3 style="font-size: 18px; margin-bottom: 8px;">Due-Date Reminders</h3>
+        <p style="margin-bottom: 8px; font-size: 15px;"><strong>What it does:</strong> Sends WhatsApp/SMS to members 3 days before due date.</p>
+        <p style="margin-bottom: 8px; font-size: 15px;"><strong>When:</strong> Runs automatically in the background.</p>
+        <p style="color: #00695C; font-weight: 600; font-size: 15px;">→ Helps: You never forget to remind a member again.</p>
       </div>
 
-      <div class="automation-card">
-        <div class="automation-header">
-          <div class="automation-icon">⚠️</div>
-          <div class="automation-name">AUTOMATION 2: Overdue Alerts</div>
-        </div>
-        <div class="automation-meta-item"><strong>What:</strong> Flags defaulters and creates a WhatsApp message</div>
-        <div class="automation-meta-item"><strong>When:</strong> 3 days after due date passes</div>
-        <div class="automation-meta-item" style="color: var(--muted); font-size: 13px;">Automatically identifies late payers and drafts respectful, firm reminder notes.</div>
-        <div class="automation-helps">Helps: Recover payments without awkward calls</div>
+      <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <div style="font-size: 24px; margin-bottom: 8px;">⚠️</div>
+        <h3 style="font-size: 18px; margin-bottom: 8px;">Overdue Alerts</h3>
+        <p style="margin-bottom: 8px; font-size: 15px;"><strong>What it does:</strong> Flags defaulters and creates a WhatsApp message.</p>
+        <p style="margin-bottom: 8px; font-size: 15px;"><strong>When:</strong> 3 days after due date passes.</p>
+        <p style="color: #00695C; font-weight: 600; font-size: 15px;">→ Helps: Recover payments without awkward calls.</p>
       </div>
 
-      <div class="automation-card">
-        <div class="automation-header">
-          <div class="automation-icon">💾</div>
-          <div class="automation-name">AUTOMATION 3: Weekly Auto-Backup</div>
-        </div>
-        <div class="automation-meta-item"><strong>What:</strong> Encrypted backup of your data</div>
-        <div class="automation-meta-item"><strong>When:</strong> Every Sunday, keeps last 5 copies</div>
-        <div class="automation-meta-item" style="color: var(--muted); font-size: 13px;">Silently creates an encrypted SQLite dump and rotates oldest snapshots safely.</div>
-        <div class="automation-helps">Helps: If your phone dies, your data is safe</div>
+      <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <div style="font-size: 24px; margin-bottom: 8px;">💾</div>
+        <h3 style="font-size: 18px; margin-bottom: 8px;">Weekly Auto-Backup</h3>
+        <p style="margin-bottom: 8px; font-size: 15px;"><strong>What it does:</strong> Encrypted backup of your data.</p>
+        <p style="margin-bottom: 8px; font-size: 15px;"><strong>When:</strong> Every Sunday, keeps last 5 copies.</p>
+        <p style="color: #00695C; font-weight: 600; font-size: 15px;">→ Helps: If your phone dies, your data is safe.</p>
       </div>
 
-      <div class="automation-card">
-        <div class="automation-header">
-          <div class="automation-icon">🧹</div>
-          <div class="automation-name">AUTOMATION 4: Log Cleanup</div>
-        </div>
-        <div class="automation-meta-item"><strong>What:</strong> Deletes old logs to keep app fast</div>
-        <div class="automation-meta-item"><strong>When:</strong> Every 30 days</div>
-        <div class="automation-meta-item" style="color: var(--muted); font-size: 13px;">Prunes redundant UI cache, vacuuming database pages to conserve phone storage.</div>
-        <div class="automation-helps">Helps: App stays fast even after years of use</div>
+      <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🧹</div>
+        <h3 style="font-size: 18px; margin-bottom: 8px;">Log Cleanup</h3>
+        <p style="margin-bottom: 8px; font-size: 15px;"><strong>What it does:</strong> Deletes old logs to keep app fast.</p>
+        <p style="margin-bottom: 8px; font-size: 15px;"><strong>When:</strong> Every 30 days.</p>
+        <p style="color: #00695C; font-weight: 600; font-size: 15px;">→ Helps: App stays fast even after years of use.</p>
       </div>
 
-      <div class="automation-card">
-        <div class="automation-header">
-          <div class="automation-icon">📸</div>
-          <div class="automation-name">AUTOMATION 5: Snapshot Refresh Prompt</div>
-        </div>
-        <div class="automation-meta-item"><strong>What:</strong> Reminds you to send updated snapshot to members</div>
-        <div class="automation-meta-item"><strong>When:</strong> On app open</div>
-        <div class="automation-meta-item" style="color: var(--muted); font-size: 13px;">Prompts managers whenever collection changes so groups receive timely updates.</div>
-        <div class="automation-helps">Helps: Members always see current data</div>
+      <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <div style="font-size: 24px; margin-bottom: 8px;">📸</div>
+        <h3 style="font-size: 18px; margin-bottom: 8px;">Snapshot Refresh Prompt</h3>
+        <p style="margin-bottom: 8px; font-size: 15px;"><strong>What it does:</strong> Reminds you to send updated snapshot to members.</p>
+        <p style="margin-bottom: 8px; font-size: 15px;"><strong>When:</strong> On app open.</p>
+        <p style="color: #00695C; font-weight: 600; font-size: 15px;">→ Helps: Members always see current data.</p>
       </div>
 
-      <div class="automation-card">
-        <div class="automation-header">
-          <div class="automation-icon">🔍</div>
-          <div class="automation-name">AUTOMATION 6: Device Capability Detection</div>
-        </div>
-        <div class="automation-meta-item"><strong>What:</strong> Checks if speech/TTS works on your device</div>
-        <div class="automation-meta-item"><strong>When:</strong> On launch</div>
-        <div class="automation-meta-item" style="color: var(--muted); font-size: 13px;">Inspects local Android microphone and speech recognition engines on launch.</div>
-        <div class="automation-helps">Helps: No broken features shown to users</div>
+      <div style="padding: 20px; background: white; border-radius: 12px; border: 1px solid #e2e8f0;">
+        <div style="font-size: 24px; margin-bottom: 8px;">🔍</div>
+        <h3 style="font-size: 18px; margin-bottom: 8px;">Device Capability Detection</h3>
+        <p style="margin-bottom: 8px; font-size: 15px;"><strong>What it does:</strong> Checks if speech/TTS works on your device.</p>
+        <p style="margin-bottom: 8px; font-size: 15px;"><strong>When:</strong> On launch.</p>
+        <p style="color: #00695C; font-weight: 600; font-size: 15px;">→ Helps: No broken features shown to users.</p>
       </div>
     </div>
   </div>
@@ -2462,7 +2442,7 @@ details p {
 <section id="comparison-pictorial">
   <div class="container text-center">
     <h2>ChitVault vs Everything Else</h2>
-    <p class="sub-title">We built what others skipped.</p>
+    <p class="sub-title"><strong>We built what others skipped.</strong> Specialized strictly for chit funds.</p>
     
     <div class="comparison-table-wrap">
       <table class="comparison-table">
@@ -2470,60 +2450,60 @@ details p {
           <tr>
             <th style="text-align: left;">Feature / Capability</th>
             <th>📓 Paper</th>
-            <th>📊 Excel</th>
+            <th>📱 Khatabook</th>
             <th>☁️ Cloud Apps</th>
             <th class="highlight-col">📱 ChitVault</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td style="text-align: left; font-weight: 600;">Works Offline</td>
-            <td>✅</td>
-            <td>⚠️</td>
-            <td>❌</td>
-            <td class="highlight-col">✅</td>
+            <td style="text-align: left; font-weight: 600;">Works fully offline</td>
+            <td>✅ Yes</td>
+            <td>❌ Needs internet</td>
+            <td>❌ Needs internet</td>
+            <td class="highlight-col">✅ Yes, 100% offline</td>
           </tr>
           <tr>
-            <td style="text-align: left; font-weight: 600;">Auto Reminders</td>
-            <td>❌</td>
-            <td>❌</td>
-            <td>✅</td>
-            <td class="highlight-col">✅</td>
+            <td style="text-align: left; font-weight: 600;">Built specifically for chit funds</td>
+            <td>✅ Yes (manual)</td>
+            <td>❌ Retail credit only</td>
+            <td>✅ Yes</td>
+            <td class="highlight-col">✅ Yes, deeply specialized</td>
           </tr>
           <tr>
-            <td style="text-align: left; font-weight: 600;">Auto Winner Math</td>
-            <td>❌</td>
-            <td>⚠️ Manual</td>
+            <td style="text-align: left; font-weight: 600;">Auto-calculates winners & dividends</td>
+            <td>❌ Manual math</td>
+            <td>❌ No</td>
             <td>⚠️ Partial</td>
-            <td class="highlight-col">✅</td>
+            <td class="highlight-col">✅ Yes, automatic</td>
           </tr>
           <tr>
-            <td style="text-align: left; font-weight: 600;">Monthly Cost</td>
-            <td>₹0</td>
-            <td>₹0</td>
-            <td>₹1000+</td>
-            <td class="highlight-col">₹0</td>
+            <td style="text-align: left; font-weight: 600;">Monthly cost</td>
+            <td>₹0 (but high time cost)</td>
+            <td>Free (sells your data)</td>
+            <td>₹1,000+ /month</td>
+            <td class="highlight-col">₹0 forever (no ads, no data selling)</td>
           </tr>
           <tr>
-            <td style="text-align: left; font-weight: 600;">Data Privacy</td>
-            <td>🔓</td>
-            <td>🔓</td>
-            <td>☁️</td>
-            <td class="highlight-col">🔐 On-device</td>
+            <td style="text-align: left; font-weight: 600;">Data privacy</td>
+            <td>🔓 Anyone can read it</td>
+            <td>⚠️ Cloud-based</td>
+            <td>⚠️ Cloud-based</td>
+            <td class="highlight-col">🔐 AES-256 Encrypted, stays on your phone</td>
           </tr>
           <tr>
-            <td style="text-align: left; font-weight: 600;">Indian Languages</td>
-            <td>✅</td>
-            <td>❌</td>
-            <td>❌</td>
-            <td class="highlight-col">✅ 11</td>
+            <td style="text-align: left; font-weight: 600;">Supports 11 Indian languages</td>
+            <td>✅ (if you write it)</td>
+            <td>❌ English/Hindi only</td>
+            <td>❌ English only</td>
+            <td class="highlight-col">✅ 11 languages</td>
           </tr>
           <tr>
-            <td style="text-align: left; font-weight: 600;">Setup Time</td>
-            <td>Days</td>
-            <td>Hours</td>
+            <td style="text-align: left; font-weight: 600;">Setup time</td>
+            <td>Days to write</td>
+            <td>Minutes</td>
             <td>Weeks</td>
-            <td class="highlight-col">5 min</td>
+            <td class="highlight-col">✅ 5 minutes</td>
           </tr>
         </tbody>
       </table>
@@ -2537,7 +2517,7 @@ details p {
     <div class="offline-content">
       <h2>Works When the Internet Doesn't</h2>
       <p>
-        ChitVault stores everything on your phone. No servers. No cloud. No monthly fees. Record payments in a village with no signal. Send reminders when you're back online. Your members' data never touches a server.
+        <strong>ChitVault stores everything securely on your phone.</strong> Record payments in villages with zero cellular signal, and dispatch reminders when you are back online.
       </p>
       <div class="offline-stats-row">
         <div class="offline-stat-item">0 servers</div>
@@ -2557,46 +2537,79 @@ details p {
 <section id="for-companies">
   <div class="container text-center">
     <h2>Running 10+ Groups? Here's What ChitVault Does For You</h2>
-    <p class="sub-title">From small committees to multi-city operations.</p>
+    <p class="sub-title"><strong>From small committees to multi-city operations.</strong> Maximize collection speed and operational control.</p>
     
+    <!-- 3 Big ROI Visual Stats Cards -->
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; margin-bottom: 40px; text-align: left;">
+      <div style="background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 12px rgba(15,23,42,0.06); border-top: 4px solid #00695C;">
+        <div style="font-size: 42px; font-weight: 800; color: #00695C; line-height: 1.1; margin-bottom: 8px;">₹0</div>
+        <div style="font-size: 17px; font-weight: 700; color: #0F172A; margin-bottom: 6px;">Infrastructure Cost</div>
+        <div style="font-size: 14.5px; color: #64748B; line-height: 1.5;">No servers to maintain.</div>
+      </div>
+
+      <div style="background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 12px rgba(15,23,42,0.06); border-top: 4px solid #00695C;">
+        <div style="font-size: 42px; font-weight: 800; color: #00695C; line-height: 1.1; margin-bottom: 8px;">5x</div>
+        <div style="font-size: 17px; font-weight: 700; color: #0F172A; margin-bottom: 6px;">Faster Data Entry</div>
+        <div style="font-size: 14.5px; color: #64748B; line-height: 1.5;">Payments recorded in 3 taps.</div>
+      </div>
+
+      <div style="background: white; border: 1px solid #e2e8f0; border-radius: 16px; padding: 28px; box-shadow: 0 4px 12px rgba(15,23,42,0.06); border-top: 4px solid #00695C;">
+        <div style="font-size: 42px; font-weight: 800; color: #00695C; line-height: 1.1; margin-bottom: 8px;">100%</div>
+        <div style="font-size: 17px; font-weight: 700; color: #0F172A; margin-bottom: 6px;">Offline</div>
+        <div style="font-size: 14.5px; color: #64748B; line-height: 1.5;">Works in rural branches with zero internet.</div>
+      </div>
+    </div>
+
     <div class="companies-grid text-center" style="text-align: left;">
       <div class="company-card">
         <div style="font-size: 28px; margin-bottom: 12px;">📊</div>
         <h3>BENEFIT 1: Centralized Dashboard</h3>
-        <p>"See every manager's group, collection, and defaulter list from one account. No more calling to ask for status."</p>
-        <div style="margin-top: 10px; font-size: 13px; color: var(--muted);">Real-time aggregated collections across branches without requiring managers to submit daily spreadsheets.</div>
+        <p><strong>See every manager's collections and defaulters from one place.</strong> No more phone calls asking for status.</p>
+        <ul style="list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>📈 Aggregated multi-branch daily collections</li>
+          <li>🎯 Automated manager performance tracking</li>
+        </ul>
       </div>
 
       <div class="company-card">
         <div style="font-size: 28px; margin-bottom: 12px;">📜</div>
         <h3>BENEFIT 2: Complete Audit Trail</h3>
-        <p>"Every payment, winner announcement, and edit is logged with timestamp + user. Exportable for statutory audit."</p>
-        <div style="margin-top: 10px; font-size: 13px; color: var(--muted);">Compliant with record-keeping requirements under the Chit Funds Act, 1982 with tamper-evident history.</div>
+        <p><strong>Every payment and winner edit is logged with timestamp.</strong> Exportable for statutory audits.</p>
+        <ul style="list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>⚖️ Compliant with Chit Funds Act 1982 standards</li>
+          <li>🛡️ Tamper-evident revision history</li>
+        </ul>
       </div>
 
       <div class="company-card">
         <div style="font-size: 28px; margin-bottom: 12px;">👥</div>
         <h3>BENEFIT 3: Multi-Manager Support</h3>
-        <p>"Up to 100 managers on one company account. Each with separate groups. Role-based permissions."</p>
-        <div style="margin-top: 10px; font-size: 13px; color: var(--muted);">Assign managers to distinct territories, controlling who can record collections or conduct auctions.</div>
+        <p><strong>Up to 100 managers on one company account.</strong> Each manager handles separate groups with custom permissions.</p>
+        <ul style="list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>🔒 Territory-based role permissions</li>
+          <li>💼 Secure individual agent credentials</li>
+        </ul>
       </div>
 
       <div class="company-card">
         <div style="font-size: 28px; margin-bottom: 12px;">🎨</div>
         <h3>BENEFIT 4: White-Label Option</h3>
-        <p>"Your company logo, your app store listing, our technology. Deploy in 4 weeks. Own your brand."</p>
-        <div style="margin-top: 10px; font-size: 13px; color: var(--muted);">Delivered with your registered business name, custom color scheme, and direct customer branding.</div>
+        <p><strong>Your brand, your logo, your play store listing.</strong> Built on our proven offline engine.</p>
+        <ul style="list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 6px; font-size: 13.5px; color: var(--muted);">
+          <li>🏷️ Custom brand colors and receipts</li>
+          <li>🚀 Rapid deployment in 4 weeks</li>
+        </ul>
       </div>
     </div>
 
     <div class="company-cta-box">
-      <h3 style="margin-bottom: 10px;">Book a 15-minute demo call →</h3>
+      <h3 style="margin-bottom: 10px;">Book a 15-min demo to discuss multi-manager licensing →</h3>
       <p style="color: var(--muted); font-size: 15px;">Discover how registered chit companies and large committee syndicates run on ChitVault.</p>
       <div class="company-cta-buttons">
-        <a href="https://wa.me/919010150809?text=Hi%2C%20we%20are%20a%20chit%20fund%20company%20interested%20in%20a%2015-minute%20demo%20call" target="_blank" rel="noopener" class="btn btn-whatsapp">
-          <span>💬 WhatsApp Business</span>
+        <a href="https://wa.me/919010150809?text=Hi%2C%20we%20are%20a%20chit%20fund%20company%20interested%20in%20multi-manager%20licensing%20and%20want%20to%20book%20a%20demo" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <span>💬 Book a demo via WhatsApp</span>
         </a>
-        <a href="mailto:s9010150809@gmail.com?subject=ChitVault%20Company%20Demo%20Request" class="btn btn-secondary">
+        <a href="mailto:s9010150809@gmail.com?subject=ChitVault%20Multi-Manager%20Licensing%20Demo%20Request" class="btn btn-secondary">
           <span>✉️ Schedule via Email</span>
         </a>
       </div>
@@ -2626,9 +2639,7 @@ details p {
         <div class="testimonial-text" style="font-weight: 600; font-size: 17px;">
           Free pilots available for 10 managers
         </div>
-        <p style="color: var(--muted); font-size: 14px; line-height: 1.6;">
-          Are you managing 2 or more groups? Join our hands-on guided pilot program. Get direct access to the product engineering team.
-        </p>
+        <p style="color: var(--muted); font-size: 14px; line-height: 1.6;">Managing 2 or more chit groups? Join our guided pilot program for direct engineering support.</p>
       </div>
 
       <div class="testimonial-card">
@@ -2715,77 +2726,133 @@ details p {
 <section id="faq">
   <div class="container text-center">
     <h2>Frequently Asked Questions</h2>
-    <p class="sub-title">Clear, honest answers about ChitVault's architecture, security, and usage.</p>
+    <p class="sub-title"><strong>Clear, honest answers.</strong> Everything you need to know about ChitVault's security and usage.</p>
     
     <div class="faq-accordion-wrap text-center" style="text-align: left;">
       <details>
-        <summary>1. Is ChitVault really free?</summary>
-        <p>Yes. The Free plan is 100% free forever for individual managers running up to 1 group with 20 members. It includes all core features — payment recording, winner calculations, PDF receipts, and 11 Indian languages. No hidden fees, no subscriptions, and absolutely no ads.</p>
+        <summary>1. Is it really free?</summary>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>Yes. 100% free for individual managers.</strong> We don't charge monthly fees.</p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>✅ <strong>1 Active Group:</strong> Up to 20 members free forever.</li>
+          <li>✅ <strong>Zero Ads:</strong> No advertisements or data tracking.</li>
+        </ul>
       </details>
 
       <details>
-        <summary>2. Does it need internet?</summary>
-        <p>No. ChitVault is architected from the ground up to be offline-first. All your data, group details, calculations, and receipts are processed and stored locally on your device. You only use internet when you intentionally share a PDF receipt or send a reminder message over WhatsApp.</p>
+        <summary>2. Do I need internet?</summary>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>No. It works completely offline.</strong> Your data stays on your phone.</p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>📶 <strong>Works Anywhere:</strong> Record payments in villages with zero signal.</li>
+          <li>📱 <strong>On-Device:</strong> No cloud servers required to run your chit.</li>
+        </ul>
       </details>
 
       <details>
-        <summary>3. Is my data safe?</summary>
-        <p>Your data never touches our servers because ChitVault operates with zero remote servers. Everything is stored on your local phone storage protected by AES-256 encryption. Your phone's biometric or PIN lock provides the first line of defense, followed by encrypted database records.</p>
+        <summary>3. Can my members see their data?</summary>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>Yes. They can log in with a member code to see their dues.</strong></p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>👀 <strong>Passbook View:</strong> Members see their own installments and balance.</li>
+          <li>📄 <strong>PDF Statement:</strong> Share complete payment passbooks over WhatsApp.</li>
+        </ul>
       </details>
 
       <details>
-        <summary>4. Can my members see their own data?</summary>
-        <p>Yes. You can switch to "Member Self-Service" mode right on your phone and show members their past payment records, dues, and months remaining. You can also generate individual PDF passbooks and send them directly over WhatsApp in one tap.</p>
+        <summary>4. How do I back up?</summary>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>The app does it automatically.</strong> You can also export a backup file.</p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>💾 <strong>Weekly Snapshots:</strong> Keeps 5 rolling encrypted backup copies.</li>
+          <li>📤 <strong>1-Tap Export:</strong> Send backup files to Google Drive, SD Card, or WhatsApp.</li>
+        </ul>
       </details>
 
       <details>
-        <summary>5. Does ChitVault hold or manage money?</summary>
-        <p>No. ChitVault is purely a record-keeping and workflow automation tool. ChitVault is not a bank, NBFC, or escrow platform. We do not hold, pool, transmit, or settle funds. All money transactions happen directly between you and your members via cash, UPI, or direct bank transfer.</p>
+        <summary>5. Does it hold money?</summary>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>No. It's a record book.</strong> Payments go directly to your UPI or bank.</p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>🚫 <strong>Zero Middleman:</strong> We never touch, pool, or hold your funds.</li>
+          <li>🤝 <strong>Direct Settlements:</strong> Members pay cash or direct UPI to your account.</li>
+        </ul>
       </details>
 
       <details>
-        <summary>6. How do I install the app?</summary>
-        <p>Download the APK file directly from this website. Open the downloaded file on your Android phone. If prompted, allow "Install from Unknown Sources" or "Install Unknown Apps" in your Android settings, and complete the installation in 10 seconds.</p>
+        <summary>6. Is my data safe?</summary>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>Yes. Your data never touches our servers because we operate zero remote databases.</strong></p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>🔐 <strong>AES-256 Encryption:</strong> Military-grade local device encryption.</li>
+          <li>📱 <strong>Hardware Security:</strong> Protected by your phone's fingerprint and PIN lock.</li>
+        </ul>
       </details>
 
       <details>
-        <summary>7. Which languages are supported?</summary>
-        <p>ChitVault supports 11 Indian languages: English, Hindi (हिन्दी), Urdu (اردو), Telugu (తెలుగు), Tamil (தமிழ்), Kannada (ಕನ್ನಡ), Malayalam (മലയാളം), Bengali (বাংলা), Gujarati (ગુજરાતી), Punjabi (ਪੰਜਾਬੀ), and Marathi (मराठी). You can switch languages instantly anytime.</p>
+        <summary>7. How do I install the app?</summary>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>Download the APK directly from this page in 10 seconds.</strong></p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>📥 <strong>Tap Download:</strong> Save `chitvault-latest.apk` (48 MB) to your phone.</li>
+          <li>⚙️ <strong>Allow Unknown Sources:</strong> Enable installation in your Android settings if prompted.</li>
+        </ul>
       </details>
 
       <details>
-        <summary>8. Can multiple managers use it?</summary>
-        <p>Individual managers use ChitVault independently on their own devices. For chit fund companies operating with multiple branch managers or field agents, our Enterprise tier offers multi-manager synchronization, centralized reporting, and role-based permissions.</p>
+        <summary>8. Which languages are supported?</summary>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>ChitVault supports 11 major Indian languages natively.</strong></p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>🇮🇳 <strong>Supported:</strong> English, Hindi, Urdu, Telugu, Tamil, Kannada, Malayalam, Bengali, Gujarati, Punjabi, Marathi.</li>
+          <li>🔄 <strong>Instant Switching:</strong> Toggle UI language at any time without restarting the app.</li>
+        </ul>
       </details>
 
       <details>
-        <summary>9. How do I back up my data?</summary>
-        <p>ChitVault features automatic weekly backups that keep 5 rolling encrypted snapshots. You can also export an encrypted backup file at any time to your Google Drive, SD card, or share it to your personal email with one tap.</p>
+        <summary>9. Can multiple managers use it?</summary>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>Yes. Independent managers use ChitVault on individual phones.</strong></p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>👔 <strong>Solo Managers:</strong> Free and Pro plans designed for individual phones.</li>
+          <li>🏢 <strong>Enterprise Chit Companies:</strong> Multi-manager sync and aggregated reporting available under Enterprise.</li>
+        </ul>
       </details>
 
       <details>
         <summary>10. What if I lose my phone?</summary>
-        <p>As long as you have saved your weekly encrypted backup file (e.g. to Google Drive, WhatsApp, or memory card), you can install ChitVault on your new phone, select "Restore Backup", enter your secret passphrase, and resume without losing a single rupee of records.</p>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>Your records are completely safe with your weekly encrypted backup.</strong></p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>🔄 <strong>Simple Restore:</strong> Install ChitVault on your replacement phone.</li>
+          <li>🔑 <strong>Passphrase Unlock:</strong> Select "Restore Backup", enter your private key, and resume immediately.</li>
+        </ul>
       </details>
 
       <details>
         <summary>11. Can I import my existing records?</summary>
-        <p>Yes! ChitVault allows importing member rosters from your phone contact book, manual entry, or structured CSV spreadsheets. You can set the starting month of any ongoing chit so you don't have to re-enter historical payments from months ago.</p>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>Yes. You do not need to re-type past months from scratch.</strong></p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>📁 <strong>CSV & Contacts:</strong> Import members from address book or spreadsheets.</li>
+          <li>📅 <strong>Flexible Starting Month:</strong> Start directly at Month 6 or Month 12 for ongoing chits.</li>
+        </ul>
       </details>
 
       <details>
         <summary>12. How do I get support?</summary>
-        <p>Direct support is available via WhatsApp (+91 90101 50809) and email (s9010150809@gmail.com). You talk directly to our engineering and product team based in Andhra Pradesh, India.</p>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>Direct support is provided via WhatsApp and email by our engineering team in India.</strong></p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>💬 <strong>WhatsApp:</strong> Instant chat at +91 90101 50809.</li>
+          <li>✉️ <strong>Email:</strong> Reach us at s9010150809@gmail.com.</li>
+        </ul>
       </details>
 
       <details>
         <summary>13. Is there a web version?</summary>
-        <p>ChitVault is primarily built as an offline Android app for managers in the field. A companion web dashboard for chit fund companies and enterprise accounting teams is currently available under our Enterprise pilot program.</p>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>ChitVault is primarily built as an offline-first Android application.</strong></p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>📱 <strong>Mobile-First:</strong> Designed for field collections and daily manager mobility.</li>
+          <li>🖥️ <strong>Enterprise Portal:</strong> A companion web dashboard is available for registered companies in our pilot.</li>
+        </ul>
       </details>
 
       <details>
         <summary>14. Can I use it for multiple chit groups?</summary>
-        <p>Yes! The Pro and Enterprise plans allow unlimited concurrent chit groups. You can manage 5, 10, or 50 groups simultaneously with distinct installment dates, auction rules, and member lists from one unified screen.</p>
+        <p style="margin-top: 12px; margin-bottom: 8px;"><strong>Yes. The Pro and Enterprise plans support unlimited concurrent groups.</strong></p>
+        <ul style="list-style: none; display: flex; flex-direction: column; gap: 6px; font-size: 14.5px; color: #475569;">
+          <li>📊 <strong>Parallel Chits:</strong> Run 5, 10, or 20 groups simultaneously.</li>
+          <li>⚙️ <strong>Custom Rules:</strong> Each group can have distinct installment amounts, auction models, and member lists.</li>
+        </ul>
       </details>
     </div>
   </div>
@@ -2853,7 +2920,7 @@ details p {
     <div class="cta-content">
       <h2>Start managing your chit fund today</h2>
       <p>
-        Join hundreds of managers using ChitVault across India. Free to download. Setup in 5 minutes.
+        <strong>Join hundreds of chit managers across India.</strong> Free to download and takes only 5 minutes to set up.
       </p>
       <div class="cta-buttons-row">
         <a href="downloads/chitvault-latest.apk" download class="btn btn-light" style="font-size: 17px; padding: 18px 36px;">
@@ -2915,7 +2982,7 @@ details p {
           Sent! We'll call you soon.
         </div>
         <p style="margin-top: 18px; font-size: 12.5px; color: var(--muted); text-align: center; line-height: 1.5;">
-          🔒 We respect your privacy. No spam, no sales spam, and no unsolicited marketing. Your phone number is strictly used by our senior solutions specialist to coordinate your personalized ChitVault walkthrough.
+          🔒 <strong>Zero spam guarantee:</strong> Your phone number is strictly used to coordinate your ChitVault walkthrough.
         </p>
       </form>
     </div>
@@ -2932,7 +2999,7 @@ details p {
           <span>ChitVault</span>
         </div>
         <p style="color: #94A3B8; font-size: 15px; margin-bottom: 20px; line-height: 1.6;">
-          Every payment. Every winner. Secured. The offline-first record-keeping platform for Indian chit funds and rotating committees.
+          <strong>Every payment and winner secured.</strong> The offline-first record-keeping platform for Indian chit funds.
         </p>
       </div>
 
