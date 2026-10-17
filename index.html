@@ -3,330 +3,3018 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ChitVault — Committee & Chit Manager for India</title>
-<meta name="description" content="ChitVault is a record-keeping and communication tool for chit fund and committee managers in India. Works fully offline. Track payments, winners, and members — no server, no cloud, no risk.">
-<meta name="keywords" content="chit fund app, committee management, chit manager India, offline chit app, chit fund software">
-<meta property="og:title" content="ChitVault — Committee & Chit Manager for India">
-<meta property="og:description" content="Record-keeping and communication tool for chit fund managers. Works offline.">
-<meta property="og:type" content="website">
+<title>ChitVault — Committee & Chit Fund Manager for India (Offline & Multi-Language)</title>
+<meta name="description" content="ChitVault is the offline-first chit fund management app for India. Track payments, announce winners, send reminders. Free forever. 11 languages. No monthly fees.">
+<meta name="keywords" content="chit fund app, chit fund software India, committee management app, offline chit fund app, chit fund reminder app, chit fund manager app, multi-language chit app">
+<meta property="og:title" content="ChitVault — Offline Chit Fund Manager for India">
+<meta property="og:description" content="Track payments, announce winners, send reminders. Works offline. Free forever.">
+<meta property="og:image" content="https://shaik-abdul-sammed.github.io/chitvault-web/preview.png">
 <meta property="og:url" content="https://shaik-abdul-sammed.github.io/chitvault-web/">
-<meta name="theme-color" content="#00695c">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#00695C">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🔐</text></svg>">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "ChitVault",
+  "applicationCategory": "BusinessApplication",
+  "operatingSystem": "Android",
+  "description": "Offline-first chit fund management app for India",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"},
+  "featureList": [
+    "Offline payment tracking",
+    "Winner announcements",
+    "Automated reminders",
+    "11 Indian languages",
+    "Encrypted backups",
+    "Member self-service portal"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "5",
+    "ratingCount": "1"
+  }
+}
+</script>
+
 <style>
-:root{--primary:#00695c;--primary-light:#00897b;--primary-dark:#004d40;--accent:#14b8a6;--dark:#0f172a;--darker:#020617;--light:#f8fafc;--border:#e2e8f0;--muted:#64748b;--success:#10b981;--warning:#f59e0b;--radius:14px;--shadow-sm:0 2px 8px rgba(15,23,42,.06);--shadow-md:0 8px 24px rgba(15,23,42,.08);--shadow-lg:0 24px 48px rgba(15,23,42,.12)}
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:80px}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;line-height:1.65;color:var(--dark);background:#fff;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-.container{max-width:1120px;margin:0 auto;padding:0 24px}
-nav{position:sticky;top:0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--border);z-index:100;padding:14px 0}
-nav .container{display:flex;justify-content:space-between;align-items:center}
-nav .logo{display:flex;align-items:center;gap:10px;font-size:20px;font-weight:800;color:var(--primary);text-decoration:none}
-nav .logo::before{content:"🔐";font-size:22px}
-nav ul{list-style:none;display:flex;gap:28px}
-nav a{color:var(--dark);text-decoration:none;font-size:15px;font-weight:500;transition:color .2s}
-nav a:hover{color:var(--primary)}
-.hero{background:linear-gradient(135deg,#004d40 0%,#00695c 45%,#00897b 100%);color:#fff;padding:110px 24px 130px;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 30% 40%,rgba(255,255,255,.08) 0%,transparent 45%),radial-gradient(circle at 70% 60%,rgba(20,184,166,.15) 0%,transparent 40%);animation:drift 24s ease-in-out infinite}
-@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(-4%,-3%)}}
-.hero-content{position:relative;z-index:1;max-width:800px;margin:0 auto}
-.hero .badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);padding:8px 18px;border-radius:99px;font-size:14px;font-weight:500;margin-bottom:24px}
-.hero .badge::before{content:"●";color:#4ade80;animation:pulse 2s ease-in-out infinite;font-size:10px}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.hero h1{font-size:64px;font-weight:800;letter-spacing:-1.5px;line-height:1.1;margin-bottom:20px;background:linear-gradient(180deg,#fff 0%,#cbd5e1 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
-.hero .tagline{font-size:24px;font-weight:500;opacity:.95;margin-bottom:14px}
-.hero .sub{font-size:17px;opacity:.8;max-width:600px;margin:0 auto 40px;line-height:1.6}
-.hero-cta{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;border-radius:12px;text-decoration:none;font-weight:700;font-size:16px;transition:all .2s ease;border:2px solid transparent}
-.btn-primary{background:#fff;color:var(--primary);box-shadow:0 10px 30px rgba(0,0,0,.15)}
-.btn-primary:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(0,0,0,.25)}
-.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
-.btn-outline:hover{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.7)}
-.trust{background:var(--light);padding:36px 24px;border-bottom:1px solid var(--border)}
-.trust-grid{display:flex;justify-content:center;gap:56px;flex-wrap:wrap;max-width:1000px;margin:0 auto}
-.trust-item{display:flex;align-items:center;gap:10px;font-weight:600;color:var(--dark);font-size:15px}
-.trust-item svg{flex-shrink:0}
-section{padding:90px 24px}
-.section-head{text-align:center;max-width:720px;margin:0 auto 56px}
-.section-head h2{font-size:42px;font-weight:800;letter-spacing:-.8px;margin-bottom:16px;color:var(--dark)}
-.section-head p{font-size:18px;color:var(--muted);line-height:1.6}
-.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px}
-.feature{background:#fff;padding:32px;border-radius:var(--radius);border:1px solid var(--border);transition:all .25s ease;position:relative;overflow:hidden}
-.feature::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary),var(--accent));transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
-.feature:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg);border-color:transparent}
-.feature:hover::before{transform:scaleX(1)}
-.feature .icon{width:52px;height:52px;border-radius:12px;background:linear-gradient(135deg,rgba(0,105,92,.1),rgba(20,184,166,.15));display:flex;align-items:center;justify-content:center;margin-bottom:20px;font-size:24px}
-.feature h3{font-size:20px;font-weight:700;margin-bottom:10px;color:var(--dark)}
-.feature p{color:var(--muted);font-size:15px;line-height:1.65}
-.how{background:var(--light)}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:40px;max-width:960px;margin:0 auto}
-.step{text-align:center;position:relative}
-.step-num{width:72px;height:72px;background:linear-gradient(135deg,var(--primary),var(--primary-light));color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;font-weight:800;margin:0 auto 20px;box-shadow:0 12px 28px rgba(0,105,92,.25)}
-.step h3{font-size:20px;font-weight:700;margin-bottom:10px}
-.step p{color:var(--muted);font-size:15px;line-height:1.65}
-.langs{background:#fff}
-.lang-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;max-width:900px;margin:0 auto}
-.lang-chip{background:var(--light);padding:12px 22px;border-radius:99px;border:1px solid var(--border);font-weight:500;font-size:15px;color:var(--dark);transition:all .2s}
-.lang-chip:hover{background:var(--primary);color:#fff;border-color:var(--primary);transform:translateY(-2px)}
-.faq{max-width:820px;margin:0 auto}
-details{background:#fff;border:1px solid var(--border);border-radius:var(--radius);margin-bottom:14px;padding:22px 28px;transition:all .2s}
-details[open]{border-color:var(--accent);box-shadow:var(--shadow-md)}
-summary{font-weight:700;cursor:pointer;font-size:17px;list-style:none;position:relative;padding-right:36px;color:var(--dark)}
-summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);font-size:26px;color:var(--primary);font-weight:400;transition:transform .25s}
-details[open] summary::after{content:"−"}
-details p{margin-top:16px;color:var(--muted);font-size:15px;line-height:1.75}
-.disclaimer-wrap{background:var(--light)}
-.disclaimer{background:#fef3c7;border-left:5px solid var(--warning);padding:24px 28px;border-radius:var(--radius);color:#78350f;font-size:15px;line-height:1.7;max-width:960px;margin:0 auto}
-.disclaimer strong{color:#78350f}
-.contact{background:linear-gradient(135deg,var(--darker) 0%,var(--dark) 100%);color:#fff;text-align:center;padding:100px 24px;position:relative;overflow:hidden}
-.contact::before{content:"";position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(circle at 50% 50%,rgba(20,184,166,.12) 0%,transparent 60%)}
-.contact-content{position:relative;z-index:1;max-width:700px;margin:0 auto}
-.contact h2{font-size:38px;font-weight:800;margin-bottom:16px;letter-spacing:-.6px}
-.contact .sub{color:#94a3b8;font-size:17px;margin-bottom:36px;line-height:1.6}
-.contact-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:28px}
-.contact-links a{display:inline-flex;align-items:center;gap:10px;color:#5eead4;text-decoration:none;font-weight:600;font-size:16px;padding:14px 26px;border:1px solid rgba(94,234,212,.3);border-radius:12px;transition:all .2s}
-.contact-links a:hover{background:rgba(94,234,212,.08);border-color:#5eead4;transform:translateY(-2px)}
-footer{background:var(--darker);color:#64748b;text-align:center;padding:36px 24px;font-size:14px;border-top:1px solid rgba(148,163,184,.1)}
-footer .heart{color:#ef4444}
-@media(max-width:768px){nav ul{display:none}.hero{padding:80px 20px 100px}.hero h1{font-size:40px}.hero .tagline{font-size:19px}.hero .sub{font-size:16px}.section-head h2{font-size:30px}section{padding:60px 20px}.contact h2{font-size:28px}.trust-grid{gap:24px}.trust-item{font-size:14px}.btn{padding:14px 24px;font-size:15px}}
-@media(max-width:400px){.hero h1{font-size:34px}.btn{width:100%;justify-content:center}.hero-cta{flex-direction:column}}
+/* CSS Reset & Custom Design System */
+:root {
+  --primary: #00695C;
+  --primary-light: #00897B;
+  --primary-dark: #004D40;
+  --accent: #14B8A6;
+  --dark: #0F172A;
+  --darker: #020617;
+  --light: #F8FAFC;
+  --light-teal: rgba(0, 105, 92, 0.07);
+  --border: #E2E8F0;
+  --border-subtle: #F1F5F9;
+  --muted: #64748B;
+  --muted-light: #94A3B8;
+  --success: #10B981;
+  --success-bg: #ECFDF5;
+  --warning: #F59E0B;
+  --warning-bg: #FFFBEB;
+  --danger: #DC2626;
+  --danger-bg: #FEF2F2;
+  --radius-sm: 8px;
+  --radius: 14px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --shadow-xs: 0 1px 3px rgba(15,23,42,0.04);
+  --shadow-sm: 0 4px 12px rgba(15,23,42,0.05);
+  --shadow-md: 0 8px 24px rgba(15,23,42,0.08);
+  --shadow-lg: 0 20px 48px rgba(15,23,42,0.12);
+  --shadow-xl: 0 28px 64px rgba(15,23,42,0.16);
+  --transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 84px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.65;
+  color: var(--dark);
+  background: #FFFFFF;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+/* Containers & Structural Classes */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+
+.container-narrow {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: 80px 24px;
+  position: relative;
+  width: 100%;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Typography Hierarchy */
+h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1.4px;
+  color: var(--dark);
+}
+
+h2 {
+  font-size: clamp(24px, 3.5vw, 40px);
+  font-weight: 700;
+  line-height: 1.25;
+  letter-spacing: -0.8px;
+  color: var(--dark);
+  margin-bottom: 16px;
+}
+
+h3 {
+  font-size: clamp(19px, 2.5vw, 22px);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--dark);
+  margin-bottom: 10px;
+}
+
+p.sub-title {
+  font-size: clamp(16px, 2.2vw, 19px);
+  color: var(--muted);
+  max-width: 740px;
+  margin: 0 auto 48px;
+  line-height: 1.65;
+}
+
+/* Global Buttons & CTA Elements */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 16px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  min-height: 54px;
+  white-space: nowrap;
+  user-select: none;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #FFFFFF;
+  box-shadow: 0 10px 28px rgba(0, 105, 92, 0.28);
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 16px 38px rgba(0, 105, 92, 0.38);
+  color: #FFFFFF;
+}
+
+.btn-secondary {
+  background: #FFFFFF;
+  color: var(--primary);
+  border-color: var(--primary);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-secondary:hover {
+  background: rgba(0, 105, 92, 0.06);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  color: var(--primary-dark);
+}
+
+.btn-light {
+  background: #FFFFFF;
+  color: var(--primary);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.16);
+}
+
+.btn-light:hover {
+  background: #F1F5F9;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.25);
+  color: var(--primary-dark);
+}
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #FFFFFF;
+  box-shadow: 0 10px 28px rgba(37, 211, 102, 0.35);
+}
+
+.btn-whatsapp:hover {
+  background: #20BD5A;
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(37, 211, 102, 0.45);
+  color: #FFFFFF;
+}
+
+/* SECTION 1: STICKY NAVIGATION */
+#nav {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
+  padding: 14px 0;
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary);
+  text-decoration: none;
+  letter-spacing: -0.6px;
+}
+
+.brand-icon-shield {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(0, 105, 92, 0.3);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-links a {
+  color: var(--dark);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.2s;
+  padding: 6px 0;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-login {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.nav-login:hover {
+  color: var(--primary);
+}
+
+.nav-btn {
+  padding: 10px 22px;
+  font-size: 14px;
+  min-height: 44px;
+  border-radius: 10px;
+}
+
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--dark);
+  padding: 4px;
+}
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  background: #FFFFFF;
+  padding: 24px;
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-xl);
+  flex-direction: column;
+  gap: 16px;
+  z-index: 999;
+}
+
+.mobile-menu.active {
+  display: flex;
+}
+
+.mobile-menu a {
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--dark);
+  text-decoration: none;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* SECTION 2: HERO */
+#hero {
+  background: linear-gradient(135deg, #004D40 0%, #00695C 45%, #00897B 100%);
+  color: #FFFFFF;
+  padding: 100px 24px 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 25% 25%, rgba(255, 255, 255, 0.1) 0%, transparent 45%),
+              radial-gradient(circle at 75% 75%, rgba(20, 184, 166, 0.2) 0%, transparent 45%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-left {
+  text-align: left;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 8px 18px;
+  border-radius: 99px;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #FFFFFF;
+}
+
+.hero-title {
+  color: #FFFFFF;
+  margin-bottom: 20px;
+  letter-spacing: -1.5px;
+}
+
+.hero-sub {
+  font-size: clamp(17px, 2.2vw, 20px);
+  opacity: 0.94;
+  margin-bottom: 36px;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+}
+
+.hero-cta-btn-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hero-subnote {
+  font-size: 13px;
+  opacity: 0.85;
+  padding-left: 4px;
+}
+
+.hero-secondary-link {
+  color: #5EEAD4;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition);
+  margin-top: 4px;
+}
+
+.hero-secondary-link:hover {
+  color: #FFFFFF;
+  transform: translateX(4px);
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.phone-mockup-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 320px;
+}
+
+.phone-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 125%;
+  height: 125%;
+  background: radial-gradient(circle, rgba(20, 184, 166, 0.4) 0%, transparent 70%);
+  filter: blur(32px);
+  z-index: 0;
+}
+
+.phone-frame {
+  position: relative;
+  z-index: 1;
+  background: #020617;
+  border-radius: 40px;
+  padding: 12px;
+  box-shadow: 0 30px 70px -12px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.18);
+}
+
+.phone-inner {
+  background: #FFFFFF;
+  border-radius: 30px;
+  overflow: hidden;
+  color: var(--dark);
+  font-size: 13px;
+}
+
+.phone-status-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 18px 4px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #64748B;
+  background: #F8FAFC;
+}
+
+.phone-app-header {
+  background: var(--primary);
+  color: #FFFFFF;
+  padding: 16px;
+}
+
+.phone-header-title {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.phone-header-sub {
+  font-size: 11px;
+  opacity: 0.85;
+}
+
+.phone-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: #F8FAFC;
+}
+
+.mockup-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+}
+
+.mockup-card-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.mockup-progress-bar {
+  height: 6px;
+  background: #E2E8F0;
+  border-radius: 99px;
+  overflow: hidden;
+  margin: 6px 0;
+}
+
+.mockup-progress-fill {
+  height: 100%;
+  width: 85%;
+  background: var(--primary);
+}
+
+.mockup-pill {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 600;
+  background: #DCFCE7;
+  color: #166534;
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+.hero-stats-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 24px;
+  color: #FFFFFF;
+  font-size: 13.5px;
+  font-weight: 600;
+  opacity: 0.95;
+  text-align: center;
+}
+
+/* SECTION 3: TRUST STRIP */
+#trust {
+  background: var(--primary);
+  color: #FFFFFF;
+  padding: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.trust-signals-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.trust-signal-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* SECTION 4: PROBLEM -> SOLUTION */
+#problem {
+  background: #FFFFFF;
+}
+
+.problem-solution-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 36px;
+}
+
+.problem-col {
+  background: #FEF2F2;
+  border: 1px solid #FCA5A5;
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+}
+
+.solution-col {
+  background: #F0FDF4;
+  border: 1px solid #86EFAC;
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+}
+
+.col-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px dashed rgba(0,0,0,0.08);
+}
+
+.col-header h3 {
+  margin-bottom: 0;
+  font-size: 22px;
+}
+
+.problem-col .col-header h3 {
+  color: var(--danger);
+}
+
+.solution-col .col-header h3 {
+  color: var(--primary);
+}
+
+.comparison-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.comparison-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.comparison-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.comparison-item strong {
+  display: inline;
+  color: var(--dark);
+}
+
+.comparison-item-sub {
+  display: block;
+  font-size: 13.5px;
+  color: var(--muted);
+  margin-top: 3px;
+}
+
+/* SECTION 5: LIVE SITUATION (Reality) */
+#reality {
+  background: var(--light);
+}
+
+.reality-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.reality-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.reality-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.reality-number {
+  font-size: clamp(34px, 4vw, 44px);
+  font-weight: 800;
+  color: var(--primary);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.reality-desc {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.reality-callout {
+  background: #FFFFFF;
+  border-left: 5px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 24px 32px;
+  max-width: 900px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-sm);
+  font-size: 17px;
+  color: var(--dark);
+  line-height: 1.7;
+}
+
+/* SECTION 6: PRODUCT DEMO VIDEO */
+#demo {
+  background: #FFFFFF;
+}
+
+.video-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 18px;
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border);
+  background: #0F172A;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.video-meta {
+  margin-top: 24px;
+  font-size: 14px;
+  color: var(--muted);
+}
+
+/* SECTION 7: HOW IT WORKS */
+#how {
+  background: var(--light);
+}
+
+.how-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.how-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 28px;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+  transition: var(--transition);
+}
+
+.how-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.step-circle {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  color: #FFFFFF;
+  font-size: 26px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  box-shadow: 0 10px 24px rgba(0, 105, 92, 0.25);
+}
+
+.how-card p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* SECTION 8: 12-FEATURE GRID */
+#features {
+  background: #FFFFFF;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.feature-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.feature-icon-box {
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  background: rgba(0, 105, 92, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 18px;
+}
+
+.feature-title {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--dark);
+}
+
+.feature-desc {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.feature-subpoints {
+  margin-top: 12px;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-subtle);
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+/* SECTION 9: AUTOMATION FEATURES */
+#automation {
+  background: var(--light);
+}
+
+.automation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.automation-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 30px 26px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.automation-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary);
+}
+
+.automation-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.automation-icon {
+  font-size: 26px;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: rgba(0, 105, 92, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.automation-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+.automation-meta-item {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #334155;
+}
+
+.automation-meta-item strong {
+  color: var(--dark);
+  font-weight: 600;
+}
+
+.automation-helps {
+  margin-top: auto;
+  padding-top: 14px;
+  border-top: 1px dashed var(--border);
+  font-size: 14px;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+/* SECTION 10: PERKS & BENEFITS */
+#perks {
+  background: #FFFFFF;
+}
+
+.perks-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.perk-box {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+}
+
+.perk-box h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--primary);
+}
+
+.perk-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.perk-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--dark);
+  line-height: 1.5;
+}
+
+.perk-list li::before {
+  content: "✓";
+  color: var(--success);
+  font-weight: 800;
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* SECTION 11: FOR MANAGERS vs FOR MEMBERS */
+#for-audience {
+  background: var(--light);
+}
+
+.audience-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.audience-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.audience-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.audience-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--dark);
+}
+
+.audience-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.audience-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--dark);
+  line-height: 1.5;
+}
+
+.audience-list li::before {
+  content: "→";
+  color: var(--primary);
+  font-weight: 700;
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* SECTION 12: PICTORIAL COMPARISON */
+#comparison-pictorial {
+  background: #FFFFFF;
+}
+
+.comparison-table-wrap {
+  overflow-x: auto;
+  margin-top: 40px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border);
+}
+
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  min-width: 680px;
+  font-size: 15px;
+}
+
+.comparison-table th, .comparison-table td {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.comparison-table th {
+  background: var(--light);
+  color: var(--dark);
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.comparison-table th.highlight-col {
+  background: var(--primary);
+  color: #FFFFFF;
+  font-size: 18px;
+}
+
+.comparison-table td.highlight-col {
+  background: rgba(0, 105, 92, 0.08);
+  font-weight: 700;
+  color: var(--primary-dark);
+  border-left: 2px solid var(--primary);
+  border-right: 2px solid var(--primary);
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* SECTION 13: OFFLINE-FIRST CALLOUT */
+#offline {
+  background: linear-gradient(135deg, #004D40 0%, #00695C 100%);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 90px 24px;
+}
+
+.offline-content {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.offline-content h2 {
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.offline-content p {
+  font-size: 18px;
+  opacity: 0.94;
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+
+.offline-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.offline-stat-item {
+  font-size: 22px;
+  font-weight: 800;
+  color: #5EEAD4;
+}
+
+/* SECTION 14: HOW CHIT FUND COMPANIES BENEFIT */
+#for-companies {
+  background: #FFFFFF;
+}
+
+.companies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+
+.company-card {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 30px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.company-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-light);
+}
+
+.company-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--dark);
+}
+
+.company-card p {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.company-cta-box {
+  background: var(--light);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px;
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.company-cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+/* SECTION 15: SOCIAL PROOF */
+#testimonials {
+  background: var(--light);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.testimonial-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.testimonial-badge {
+  display: inline-block;
+  background: rgba(0, 105, 92, 0.1);
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 99px;
+  margin-bottom: 16px;
+}
+
+.testimonial-text {
+  font-size: 15px;
+  color: var(--dark);
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* SECTION 16: PRICING */
+#pricing {
+  background: #FFFFFF;
+}
+
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  margin-top: 40px;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 30px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.pricing-card.featured {
+  border-color: var(--primary);
+  box-shadow: 0 12px 36px rgba(0, 105, 92, 0.16);
+  transform: scale(1.02);
+}
+
+.pricing-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.pricing-card.featured:hover {
+  transform: scale(1.02) translateY(-4px);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: #FFFFFF;
+  padding: 4px 18px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.pricing-tier-name {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.pricing-price {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.pricing-audience {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+}
+
+.pricing-features-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+.pricing-features-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: var(--dark);
+}
+
+.pricing-features-list li::before {
+  content: "•";
+  color: var(--primary);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.pricing-subnote {
+  margin-top: 32px;
+  font-size: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+/* SECTION 17: FAQ */
+#faq {
+  background: var(--light);
+}
+
+.faq-accordion-wrap {
+  max-width: 860px;
+  margin: 40px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+details {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 24px;
+  transition: var(--transition);
+}
+
+details[open] {
+  border-color: var(--primary-light);
+  box-shadow: var(--shadow-sm);
+}
+
+summary {
+  font-weight: 700;
+  font-size: 17px;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 32px;
+  color: var(--dark);
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+summary::after {
+  content: "+";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: var(--primary);
+  font-weight: 400;
+  transition: transform 0.2s;
+}
+
+details[open] summary::after {
+  content: "−";
+}
+
+details p {
+  margin-top: 14px;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* SECTION 18: INTEGRATIONS */
+#integrations {
+  background: #FFFFFF;
+  text-align: center;
+}
+
+.integrations-chips-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 32px auto 0;
+}
+
+.integration-chip {
+  background: var(--light);
+  border: 1px solid var(--border);
+  padding: 12px 24px;
+  border-radius: 99px;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--dark);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* SECTION 19: FINAL CTA */
+#cta {
+  background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+  color: #FFFFFF;
+  text-align: center;
+  padding: 100px 24px;
+}
+
+.cta-content {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.cta-content p {
+  font-size: 18px;
+  color: #94A3B8;
+  margin-bottom: 40px;
+  line-height: 1.6;
+}
+
+.cta-buttons-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.cta-trustline {
+  font-size: 13.5px;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+/* SECTION 20: CONTACT / DEMO FORM */
+#contact {
+  background: var(--light);
+}
+
+.contact-form-wrap {
+  max-width: 600px;
+  margin: 36px auto 0;
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  box-shadow: var(--shadow-md);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 8px;
+}
+
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 15px;
+  font-family: inherit;
+  color: var(--dark);
+  background: #FFFFFF;
+  transition: var(--transition);
+}
+
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(0, 105, 92, 0.15);
+}
+
+.form-submit-btn {
+  width: 100%;
+  min-height: 54px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.form-status-msg {
+  display: none;
+  margin-top: 16px;
+  padding: 12px;
+  background: #DCFCE7;
+  color: #166534;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* SECTION 21: FOOTER */
+#footer {
+  background: var(--darker);
+  color: #94A3B8;
+  padding: 80px 24px 36px;
+  font-size: 14.5px;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  gap: 40px;
+  max-width: 1120px;
+  margin: 0 auto 56px;
+}
+
+.footer-col-title {
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.footer-links-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links-list a {
+  color: #94A3B8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-links-list a:hover {
+  color: #5EEAD4;
+}
+
+.footer-bottom-row {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding-top: 32px;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13.5px;
+}
+
+.footer-bottom-links {
+  display: flex;
+  gap: 20px;
+}
+
+.footer-bottom-links a {
+  color: #94A3B8;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-bottom-links a:hover {
+  color: #5EEAD4;
+}
+
+/* SECTION 22: FLOATING WHATSAPP BUTTON */
+#whatsapp-float {
+  padding: 0;
+}
+
+.floating-whatsapp-btn {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  text-decoration: none;
+  z-index: 999;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.floating-whatsapp-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.5);
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 56px;
+  }
+  .hero-left {
+    text-align: center;
+  }
+  .hero-sub {
+    margin: 0 auto 36px;
+  }
+  .hero-cta-group {
+    align-items: center;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 60px 20px;
+  }
+  .nav-links, .nav-actions .nav-login {
+    display: none;
+  }
+  .mobile-menu-btn {
+    display: block;
+  }
+  .problem-solution-grid, .perks-grid, .audience-grid {
+    grid-template-columns: 1fr;
+  }
+  .trust-signals-flex {
+    gap: 20px;
+  }
+  .trust-signal-item {
+    font-size: 14px;
+  }
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .footer-bottom-row {
+    flex-direction: column;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    min-height: 56px;
+  }
+  .hero-cta-btn-wrap {
+    width: 100%;
+  }
+  .company-cta-buttons, .cta-buttons-row {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 32px;
+  }
+  .btn {
+    padding: 14px 20px;
+    font-size: 15px;
+  }
+}
+
+/* Extended Responsive Media Queries & Print Styles */
+@media print {
+  #nav, #whatsapp-float, .floating-whatsapp-btn, .mobile-menu-btn, .hero-cta-group, .company-cta-buttons, .cta-buttons-row, .form-submit-btn {
+    display: none !important;
+  }
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  section {
+    padding: 20px 0 !important;
+    page-break-inside: avoid;
+  }
+  .comparison-table-wrap, .feature-card, .automation-card {
+    box-shadow: none !important;
+    border: 1px solid #CCCCCC !important;
+  }
+}
+
+/* Accessibility Focus States & High-Contrast Support */
+:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 2px;
+}
+
+/* Custom Scrollbar Styles for Desktop WebKit */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--light);
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 99px;
+  border: 2px solid var(--light);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-light);
+}
+
+/* Additional Layout Spacers & Utility Micro-Interactions */
+.elevation-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, var(--primary), var(--primary-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 </style>
 </head>
 <body>
 
-<nav>
-<div class="container">
-<a href="#" class="logo">ChitVault</a>
-<ul>
-<li><a href="#features">Features</a></li>
-<li><a href="#how">How it works</a></li>
-<li><a href="#languages">Languages</a></li>
-<li><a href="#faq">FAQ</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</div>
-</nav>
-
-<section class="hero">
-<div class="hero-content">
-<div class="badge">Free forever for chit managers</div>
-<h1>Every payment.<br>Every winner. Secured.</h1>
-<p class="tagline">The record-keeping app built for chit fund and committee managers in India.</p>
-<p class="sub">Track contributions, announce winners, send reminders — all offline. Your data stays on your phone. No server, no cloud, no risk.</p>
-<div class="hero-cta">
-<a href="https://wa.me/919010150809?text=Hi%20I%20want%20a%20demo%20of%20ChitVault" class="btn btn-primary">Request Free Demo →</a>
-<a href="#features" class="btn btn-outline">See Features</a>
-</div>
-</div>
+<!-- SECTION 1: STICKY NAVIGATION -->
+<section id="nav">
+  <div class="nav-container">
+    <a href="#hero" class="brand-logo">
+      <div class="brand-icon-shield">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+        </svg>
+      </div>
+      <span>ChitVault</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#features">Features</a></li>
+      <li><a href="#pricing">Pricing</a></li>
+      <li><a href="#for-companies">For Companies</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#contact" class="nav-login">Log In</a>
+      <a href="downloads/chitvault-latest.apk" download class="btn btn-primary nav-btn">Download Free App</a>
+      <button class="mobile-menu-btn" onclick="document.querySelector('.mobile-menu').classList.toggle('active')" aria-label="Toggle navigation menu">☰</button>
+    </div>
+  </div>
+  <div class="mobile-menu">
+    <a href="#features" onclick="document.querySelector('.mobile-menu').classList.remove('active')">Features</a>
+    <a href="#pricing" onclick="document.querySelector('.mobile-menu').classList.remove('active')">Pricing</a>
+    <a href="#for-companies" onclick="document.querySelector('.mobile-menu').classList.remove('active')">For Companies</a>
+    <a href="#faq" onclick="document.querySelector('.mobile-menu').classList.remove('active')">FAQ</a>
+    <a href="#contact" onclick="document.querySelector('.mobile-menu').classList.remove('active')">Log In</a>
+    <a href="downloads/chitvault-latest.apk" download class="btn btn-primary" onclick="document.querySelector('.mobile-menu').classList.remove('active')">Download Free App</a>
+  </div>
 </section>
 
-<section style="background: #00695c; color: white; padding: 24px;
-  text-align: center;">
-  <div style="display: flex; justify-content: center; gap: 48px;
-    flex-wrap: wrap; max-width: 1000px; margin: 0 auto;">
-    <div style="display: flex; align-items: center; gap: 10px;
-      font-size: 15px; font-weight: 500;">
-      ✓ Works Offline
-    </div>
-    <div style="display: flex; align-items: center; gap: 10px;
-      font-size: 15px; font-weight: 500;">
-      ✓ No Monthly Fees
-    </div>
-    <div style="display: flex; align-items: center; gap: 10px;
-      font-size: 15px; font-weight: 500;">
-      ✓ Data Stays on Phone
-    </div>
-    <div style="display: flex; align-items: center; gap: 10px;
-      font-size: 15px; font-weight: 500;">
-      ✓ 11 Indian Languages
+<!-- SECTION 2: HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-left">
+        <div class="hero-badge">
+          <span>🇮🇳</span>
+          <span>Trusted by chit managers across India</span>
+        </div>
+        <h1 class="hero-title">Manage your chit fund. Offline. In your language.</h1>
+        <p class="hero-sub">
+          Track payments, announce winners, send reminders from your phone. No internet needed. No monthly fees. Data stays on your device.
+        </p>
+        <div class="hero-cta-group">
+          <div class="hero-cta-btn-wrap">
+            <a href="downloads/chitvault-latest.apk" download class="btn btn-light" style="font-size: 18px; padding: 18px 36px;">
+              <span>📥</span>
+              <span>Download Free APK (48 MB)</span>
+            </a>
+            <span class="hero-subnote">Android 6.0+ · No sign-up · Works offline</span>
+          </div>
+          <a href="https://wa.me/919010150809?text=Hi%2C%20we%20are%20a%20chit%20fund%20company%20interested%20in%20a%2015-minute%20demo%20of%20ChitVault" target="_blank" rel="noopener" class="hero-secondary-link">
+            Chit fund company? Book a 15-min demo →
+          </a>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="phone-mockup-wrap">
+          <div class="phone-glow"></div>
+          <div class="phone-frame">
+            <div class="phone-inner">
+              <div class="phone-status-bar">
+                <span>9:41 AM</span>
+                <span>LTE 🔋 100%</span>
+              </div>
+              <div class="phone-app-header">
+                <div class="phone-header-title">Sri Lakshmi Chits</div>
+                <div class="phone-header-sub">Group A-20 · Month 7 of 20</div>
+              </div>
+              <div class="phone-body">
+                <div class="mockup-card">
+                  <div class="mockup-card-title">
+                    <span>Monthly Collection</span>
+                    <span class="mockup-pill">96% Collected</span>
+                  </div>
+                  <div style="font-size: 16px; font-weight: 800; color: #00695C;">₹2,40,000 / ₹2,50,000</div>
+                  <div class="mockup-progress-bar">
+                    <div class="mockup-progress-fill"></div>
+                  </div>
+                  <div style="font-size: 11px; color: #64748B;">19 of 20 members paid</div>
+                </div>
+                <div class="mockup-card">
+                  <div class="mockup-card-title">
+                    <span>Month 7 Auction Winner</span>
+                    <span style="font-size: 10px; color: #166534; font-weight: 700;">Verified</span>
+                  </div>
+                  <div style="font-weight: 700;">Rajesh Kumar (Slot #14)</div>
+                  <div style="font-size: 11px; color: #64748B;">Bid: ₹45,000 · Dividend: ₹2,250/member</div>
+                </div>
+                <div class="mockup-card" style="border-left: 3px solid #F59E0B;">
+                  <div style="font-size: 11px; font-weight: 700; color: #B45309;">1 Pending Due Reminder</div>
+                  <div style="font-size: 10.5px; color: #64748B;">Suresh V. — Tap to send WhatsApp reminder</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-stats-row">
+          <span>Free forever</span>
+          <span>•</span>
+          <span>11 languages</span>
+          <span>•</span>
+          <span>0 servers</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="download" style="padding: 80px 24px; text-align: center;
-  background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);">
-  <div style="max-width: 900px; margin: 0 auto;">
-    <h2 style="font-size: 36px; margin-bottom: 16px; color: #0f172a;">
-      Try ChitVault today
-    </h2>
-    <p style="font-size: 18px; color: #64748b; margin-bottom: 40px;
-      max-width: 600px; margin-left: auto; margin-right: auto;">
-      Download the app (48 MB). Works fully offline.
-      No monthly fees. Your data stays on your phone.
-    </p>
-
-    <div style="display: flex; gap: 16px; justify-content: center;
-      flex-wrap: wrap; margin-bottom: 40px;">
-
-      <!-- Download APK button -->
-      <a href="downloads/chitvault-latest.apk"
-         download
-         style="display: inline-flex; align-items: center; gap: 10px;
-           background: #00695c; color: white; padding: 18px 36px;
-           border-radius: 12px; text-decoration: none;
-           font-weight: 700; font-size: 17px;
-           box-shadow: 0 10px 30px rgba(0,105,92,0.25);
-           transition: transform .2s;">
-        <span style="font-size: 22px;">📥</span>
-        Download APK
-      </a>
-
-      <!-- Watch demo button -->
-      <a href="#demo"
-         style="display: inline-flex; align-items: center; gap: 10px;
-           background: white; color: #00695c; padding: 16px 32px;
-           border: 2px solid #00695c; border-radius: 12px;
-           text-decoration: none; font-weight: 700; font-size: 17px;">
-        <span style="font-size: 22px;">▶️</span>
-        Watch 2-min Demo
-      </a>
+<!-- SECTION 3: TRUST STRIP -->
+<section id="trust">
+  <div class="trust-signals-flex">
+    <div class="trust-signal-item">
+      <span>✓</span>
+      <span>100% Offline</span>
     </div>
-
-    <p style="font-size: 13px; color: #94a3b8;">
-      Not on Play Store yet. Enable "Install from Unknown Sources"
-      in your phone settings to install.
-    </p>
+    <div class="trust-signal-item">
+      <span>✓</span>
+      <span>AES-256 Encrypted</span>
+    </div>
+    <div class="trust-signal-item">
+      <span>✓</span>
+      <span>11 Languages</span>
+    </div>
+    <div class="trust-signal-item">
+      <span>✓</span>
+      <span>No Monthly Fees</span>
+    </div>
+    <div class="trust-signal-item">
+      <span>✓</span>
+      <span>Made in India</span>
+    </div>
   </div>
 </section>
 
-<section id="demo" style="padding: 80px 24px; background: white;
-  text-align: center;">
-  <div style="max-width: 900px; margin: 0 auto;">
-    <h2 style="font-size: 36px; margin-bottom: 16px; color: #0f172a;">
-      See it in action
-    </h2>
-    <p style="font-size: 18px; color: #64748b; margin-bottom: 40px;">
-      A 2-minute walkthrough of how chit managers use ChitVault.
-    </p>
+<!-- SECTION 4: PROBLEM -> SOLUTION -->
+<section id="problem">
+  <div class="container text-center">
+    <h2>If you're still using a paper register, this is for you.</h2>
+    <p class="sub-title">Why hundreds of chit fund and committee managers are switching from traditional paper books to ChitVault.</p>
+    
+    <div class="problem-solution-grid text-center" style="text-align: left;">
+      <div class="problem-col">
+        <div class="col-header">
+          <span style="font-size: 28px;">📓</span>
+          <h3>The Paper Register Trap</h3>
+        </div>
+        <div class="comparison-list">
+          <div class="comparison-item">
+            <span class="comparison-icon">📓</span>
+            <div>
+              <strong>Paper register</strong> — Pages get worn, torn, coffee-stained, or misplaced over months of use.
+              <span class="comparison-item-sub">Physical paper registers degrade quickly in field conditions, leading to missing sheets and unreadable balances.</span>
+            </div>
+          </div>
+          <div class="comparison-item">
+            <span class="comparison-icon">📵</span>
+            <div>
+              <strong>Loses data</strong> — No backup when notebooks are lost, stolen, or damaged in transit.
+              <span class="comparison-item-sub">One misplaced notebook destroys years of customer goodwill, payment history, and credit records.</span>
+            </div>
+          </div>
+          <div class="comparison-item">
+            <span class="comparison-icon">💬</span>
+            <div>
+              <strong>Manual WhatsApp</strong> — Spending hours typing out reminder messages to individual members.
+              <span class="comparison-item-sub">Constantly copying account numbers, calculating dues manually, and drafting repetitive reminder messages.</span>
+            </div>
+          </div>
+          <div class="comparison-item">
+            <span class="comparison-icon">📊</span>
+            <div>
+              <strong>Manual math</strong> — High risk of calculation mistakes in dividends, bids, and commissions.
+              <span class="comparison-item-sub">A simple dividend calculation mistake creates friction, awkward arguments, and distrust among members.</span>
+            </div>
+          </div>
+          <div class="comparison-item">
+            <span class="comparison-icon">📄</span>
+            <div>
+              <strong>Lost receipts</strong> — Disputes arise when members claim they paid cash and receipts are lost.
+              <span class="comparison-item-sub">Without instant timestamped receipts with UTR references, verbal disputes can damage relationships.</span>
+            </div>
+          </div>
+          <div class="comparison-item">
+            <span class="comparison-icon">🕐</span>
+            <div>
+              <strong>Hours of admin</strong> — Spending entire evenings reconciling books instead of growing your business.
+              <span class="comparison-item-sub">Managers spend 2 to 3 hours every night tallying totals instead of spending quality time with family.</span>
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <!-- YouTube embed placeholder — replace VIDEO_ID when ready -->
-    <div style="position: relative; padding-bottom: 56.25%; height: 0;
-      overflow: hidden; border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(15,23,42,0.15);">
-      <iframe
-        src="https://www.youtube.com/embed/VIDEO_ID_PLACEHOLDER"
-        style="position: absolute; top: 0; left: 0;
-          width: 100%; height: 100%; border: 0;"
-        allow="accelerometer; autoplay; clipboard-write;
-          encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen>
-      </iframe>
+      <div class="solution-col">
+        <div class="col-header">
+          <span style="font-size: 28px;">📱</span>
+          <h3>The ChitVault Solution</h3>
+        </div>
+        <div class="comparison-list">
+          <div class="comparison-item">
+            <span class="comparison-icon">📱</span>
+            <div>
+              <strong>Digital, on your phone</strong> — Complete structured records always in your pocket, organized neatly.
+              <span class="comparison-item-sub">Access member ledgers, payment statuses, and group metrics in seconds, even while standing in a busy market.</span>
+            </div>
+          </div>
+          <div class="comparison-item">
+            <span class="comparison-icon">🔐</span>
+            <div>
+              <strong>AES-256 encrypted</strong> — Industry-grade encryption with rolling automatic backups to your SD card or drive.
+              <span class="comparison-item-sub">Your records are fortified with device-level cryptography so no unauthorized person can read your financial books.</span>
+            </div>
+          </div>
+          <div class="comparison-item">
+            <span class="comparison-icon">🔔</span>
+            <div>
+              <strong>Auto reminders</strong> — Instant WhatsApp & SMS reminder templates ready in 1 tap.
+              <span class="comparison-item-sub">Personalized reminder templates with member name, exact outstanding balance, and UPI link populated automatically.</span>
+            </div>
+          </div>
+          <div class="comparison-item">
+            <span class="comparison-icon">⚙️</span>
+            <div>
+              <strong>Auto winner calc</strong> — Flawless automatic auction, dividend, and interest calculations in seconds.
+              <span class="comparison-item-sub">Enter the winning bid amount, and ChitVault instantly divides the foreman commission and distribution dividend accurately.</span>
+            </div>
+          </div>
+          <div class="comparison-item">
+            <span class="comparison-icon">📄</span>
+            <div>
+              <strong>PDF receipts forever</strong> — Professional stamped PDF payment receipts with UTR verification generated instantly.
+              <span class="comparison-item-sub">Share clean, branded PDF receipts directly over WhatsApp the moment cash or UPI payment is verified.</span>
+            </div>
+          </div>
+          <div class="comparison-item">
+            <span class="comparison-icon">⏱️</span>
+            <div>
+              <strong>10 minutes/day</strong> — Record collections on the go and finish all daily chit management in 10 minutes.
+              <span class="comparison-item-sub">Streamlined one-tap workflows give you back your evenings while giving members complete confidence.</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <p style="font-size: 14px; color: #94a3b8; margin-top: 20px;">
-      Coming soon — recording in progress.
-    </p>
   </div>
 </section>
 
+<!-- SECTION 5: LIVE SITUATION (Reality) -->
+<section id="reality">
+  <div class="container text-center">
+    <h2>The Reality of Chit Funds in India</h2>
+    <p class="sub-title">India's chit fund industry is massive — but still runs on paper.</p>
+    
+    <div class="reality-grid">
+      <div class="reality-card">
+        <div class="reality-number">₹35,000 Cr+</div>
+        <div class="reality-desc">Organized chit fund market size in India (registered funds)</div>
+      </div>
+      <div class="reality-card">
+        <div class="reality-number">18–20 Cr</div>
+        <div class="reality-desc">Indians participate in chit funds and rotating savings every year</div>
+      </div>
+      <div class="reality-card">
+        <div class="reality-number">90%+</div>
+        <div class="reality-desc">Still use paper registers and WhatsApp for management</div>
+      </div>
+      <div class="reality-card">
+        <div class="reality-number">0</div>
+        <div class="reality-desc">Existing apps offering true offline + multi-language support</div>
+      </div>
+    </div>
+
+    <div class="reality-callout">
+      <strong>The market is huge. The tools are still stuck in the 1980s.</strong> ChitVault is built for how India actually runs committees — offline, multi-language, mobile-first. Whether you run a community rotating committee in a tier-3 town or manage high-ticket business chits, ChitVault gives you institutional-grade reliability without enterprise complexity.
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 6: PRODUCT DEMO VIDEO -->
+<section id="demo">
+  <div class="container text-center">
+    <h2>See ChitVault in 2 Minutes</h2>
+    <p class="sub-title">Watch how a manager runs 5 groups in 10 minutes a day.</p>
+    
+    <div class="video-container">
+      <div class="video-wrapper">
+        <iframe
+          src="https://www.youtube.com/embed/VIDEO_ID_PLACEHOLDER"
+          title="ChitVault Product Demo Walkthrough"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="video-meta">Coming soon — recording in progress.</p>
+      <div style="margin-top: 28px;">
+        <a href="downloads/chitvault-latest.apk" download class="btn btn-primary" style="font-size: 17px; padding: 16px 36px;">
+          <span>Download and try it free →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 7: HOW IT WORKS -->
+<section id="how">
+  <div class="container text-center">
+    <h2>How ChitVault Works</h2>
+    <p class="sub-title">Set up in 5 minutes. No complex training, no IT setup, and zero cloud dependency.</p>
+    
+    <div class="how-steps-grid">
+      <div class="how-card">
+        <div class="step-circle">1</div>
+        <h3>Step 1: Download the app</h3>
+        <p>Get the APK. No sign-up. Works on any Android 6.0+ phone.</p>
+        <div style="margin-top: 14px; font-size: 13.5px; color: var(--muted); line-height: 1.5;">
+          Direct 48 MB download. Install in seconds without mandatory registration or verification calls.
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="step-circle">2</div>
+        <h3>Step 2: Create your chit group</h3>
+        <p>Set monthly amount, member count, and duration in 5 minutes.</p>
+        <div style="margin-top: 14px; font-size: 13.5px; color: var(--muted); line-height: 1.5;">
+          Choose auction or lottery models, set foreman commission, and import members directly from phone contacts.
+        </div>
+      </div>
+
+      <div class="how-card">
+        <div class="step-circle">3</div>
+        <h3>Step 3: Start managing</h3>
+        <p>Record payments, announce winners, send reminders — all offline.</p>
+        <div style="margin-top: 14px; font-size: 13.5px; color: var(--muted); line-height: 1.5;">
+          Issue instant PDF receipts, run monthly auction rounds, and send automatic WhatsApp reminder alerts.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 8: 12-FEATURE GRID -->
 <section id="features">
-<div class="container">
-<div class="section-head">
-<h2>Everything a chit manager needs</h2>
-<p>One app replaces your paper register, WhatsApp reminders, and Excel sheets.</p>
-</div>
-<div class="features">
-<div class="feature"><div class="icon">📒</div><h3>Track Payments</h3><p>Record cash, UPI, and bank payments in one tap. Capture UTR numbers. Generate PDF receipts instantly.</p></div>
-<div class="feature"><div class="icon">🏆</div><h3>Announce Winners</h3><p>Support for auction, dividend, interest plan, and fixed rotation. Complete winner history with audit trail.</p></div>
-<div class="feature"><div class="icon">👥</div><h3>Manage Members</h3><p>Add members manually or from your phone contacts. Track dues, defaults, and payment history per member.</p></div>
-<div class="feature"><div class="icon">🔔</div><h3>Automatic Reminders</h3><p>Members get reminded before due dates. WhatsApp and SMS templates built in. No manual follow-ups.</p></div>
-<div class="feature"><div class="icon">📊</div><h3>Reports & Analytics</h3><p>Monthly collection reports, defaulter lists, and group performance — all exportable as PDF or CSV.</p></div>
-<div class="feature"><div class="icon">🔒</div><h3>Private by Design</h3><p>No server. No cloud. No tracking. Biometric lock, encrypted backups, and complete data ownership on your device.</p></div>
-</div>
-</div>
+  <div class="container text-center">
+    <h2>Everything a Chit Manager Needs</h2>
+    <p class="sub-title">One reliable app replaces your paper registers, scattered WhatsApp reminders, and complicated Excel sheets.</p>
+    
+    <div class="features-grid text-center" style="text-align: left;">
+      <div class="feature-card">
+        <div class="feature-icon-box">📒</div>
+        <div class="feature-title">1. Payment Tracking</div>
+        <div class="feature-desc">Cash, UPI, bank. UTR verification.</div>
+        <div class="feature-subpoints">
+          Record partial payments, multiple installments, and cross-reference UTR transaction numbers with zero math errors.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">🏆</div>
+        <div class="feature-title">2. Winner Announcement</div>
+        <div class="feature-desc">Auction, dividend, interest, fixed.</div>
+        <div class="feature-subpoints">
+          Handles reverse bidding, fixed lucky draws, and interest plan schemes with instant automated dividend distribution.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">👥</div>
+        <div class="feature-title">3. Member Management</div>
+        <div class="feature-desc">Import from contacts, CSV, or manual.</div>
+        <div class="feature-subpoints">
+          Add 50+ members in seconds from your Android address book. Tag guarantors, nominees, and alternate phone numbers.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">🔔</div>
+        <div class="feature-title">4. Smart Reminders</div>
+        <div class="feature-desc">WhatsApp + SMS before every due date.</div>
+        <div class="feature-subpoints">
+          Pre-built localized templates in 11 languages with payment amounts, due dates, and your UPI QR code.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">📊</div>
+        <div class="feature-title">5. Reports That Matter</div>
+        <div class="feature-desc">PDFs, statements, defaulter lists.</div>
+        <div class="feature-subpoints">
+          Generate monthly collection summaries, individual member passbooks, and group audit logs ready for printing or sharing.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">🔒</div>
+        <div class="feature-title">6. Data Stays Yours</div>
+        <div class="feature-desc">Encrypted. On-device. Never cloud.</div>
+        <div class="feature-subpoints">
+          Zero remote servers. No third-party data tracking, advertising SDKs, or cloud vulnerabilities. Complete device sovereignty.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">🌐</div>
+        <div class="feature-title">7. 11 Indian Languages</div>
+        <div class="feature-desc">Hindi, Telugu, Urdu, Tamil, more.</div>
+        <div class="feature-subpoints">
+          Full UI and receipt generation in English, Hindi, Urdu, Telugu, Tamil, Kannada, Malayalam, Bengali, Gujarati, Punjabi, Marathi.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">🔐</div>
+        <div class="feature-title">8. Encrypted Backups</div>
+        <div class="feature-desc">AES-256. Rolling 5 copies.</div>
+        <div class="feature-subpoints">
+          Automatic weekly snapshots stored securely. Export to SD card, personal Google Drive, or email in 1 tap.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">👤</div>
+        <div class="feature-title">9. Member Self-Service</div>
+        <div class="feature-desc">Members see their own payments, dues.</div>
+        <div class="feature-subpoints">
+          Show transparent member passbook view right on your phone without exposing other members' private information.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">💳</div>
+        <div class="feature-title">10. UPI Payments</div>
+        <div class="feature-desc">Members pay manager in one tap.</div>
+        <div class="feature-subpoints">
+          Generate dynamic and static UPI QR codes linked to PhonePe, Google Pay, Paytm, or BHIM for frictionless dues collection.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">⚡</div>
+        <div class="feature-title">11. Works Offline</div>
+        <div class="feature-desc">No internet? No problem.</div>
+        <div class="feature-subpoints">
+          Full app capabilities execute smoothly without internet connection. Perfect for remote rural villages and spotty connectivity.
+        </div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon-box">📦</div>
+        <div class="feature-title">12. Zero Learning Curve</div>
+        <div class="feature-desc">First group in 5 minutes.</div>
+        <div class="feature-subpoints">
+          Intuitive, uncluttered layout designed specifically for non-technical managers and grassroots committee leaders.
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="how" class="how">
-<div class="container">
-<div class="section-head">
-<h2>Set up in minutes</h2>
-<p>No training required. No IT team. No internet.</p>
-</div>
-<div class="steps">
-<div class="step"><div class="step-num">1</div><h3>Create your group</h3><p>Set monthly amount, duration, and member slots. ChitVault generates a unique invite code.</p></div>
-<div class="step"><div class="step-num">2</div><h3>Add your members</h3><p>Enter names manually or share your invite code via WhatsApp. Members join with one tap.</p></div>
-<div class="step"><div class="step-num">3</div><h3>Run your chit</h3><p>Record payments, announce winners, send reminders — ChitVault handles the rest.</p></div>
-</div>
-</div>
+<!-- SECTION 9: AUTOMATION FEATURES -->
+<section id="automation">
+  <div class="container text-center">
+    <h2>ChitVault Does the Boring Work For You</h2>
+    <p class="sub-title">Every automation runs offline. No server. No monthly cost.</p>
+    
+    <div class="automation-grid text-center" style="text-align: left;">
+      <div class="automation-card">
+        <div class="automation-header">
+          <div class="automation-icon">🔔</div>
+          <div class="automation-name">AUTOMATION 1: Due-Date Reminders</div>
+        </div>
+        <div class="automation-meta-item"><strong>What:</strong> Sends WhatsApp/SMS to members 3 days before due date</div>
+        <div class="automation-meta-item"><strong>When:</strong> Runs in background, no user action needed</div>
+        <div class="automation-meta-item" style="color: var(--muted); font-size: 13px;">Uses lightweight local Android alarm scheduling without draining battery.</div>
+        <div class="automation-helps">Helps: You never forget to remind a member again</div>
+      </div>
+
+      <div class="automation-card">
+        <div class="automation-header">
+          <div class="automation-icon">⚠️</div>
+          <div class="automation-name">AUTOMATION 2: Overdue Alerts</div>
+        </div>
+        <div class="automation-meta-item"><strong>What:</strong> Flags defaulters and creates a WhatsApp message</div>
+        <div class="automation-meta-item"><strong>When:</strong> 3 days after due date passes</div>
+        <div class="automation-meta-item" style="color: var(--muted); font-size: 13px;">Automatically identifies late payers and drafts respectful, firm reminder notes.</div>
+        <div class="automation-helps">Helps: Recover payments without awkward calls</div>
+      </div>
+
+      <div class="automation-card">
+        <div class="automation-header">
+          <div class="automation-icon">💾</div>
+          <div class="automation-name">AUTOMATION 3: Weekly Auto-Backup</div>
+        </div>
+        <div class="automation-meta-item"><strong>What:</strong> Encrypted backup of your data</div>
+        <div class="automation-meta-item"><strong>When:</strong> Every Sunday, keeps last 5 copies</div>
+        <div class="automation-meta-item" style="color: var(--muted); font-size: 13px;">Silently creates an encrypted SQLite dump and rotates oldest snapshots safely.</div>
+        <div class="automation-helps">Helps: If your phone dies, your data is safe</div>
+      </div>
+
+      <div class="automation-card">
+        <div class="automation-header">
+          <div class="automation-icon">🧹</div>
+          <div class="automation-name">AUTOMATION 4: Log Cleanup</div>
+        </div>
+        <div class="automation-meta-item"><strong>What:</strong> Deletes old logs to keep app fast</div>
+        <div class="automation-meta-item"><strong>When:</strong> Every 30 days</div>
+        <div class="automation-meta-item" style="color: var(--muted); font-size: 13px;">Prunes redundant UI cache, vacuuming database pages to conserve phone storage.</div>
+        <div class="automation-helps">Helps: App stays fast even after years of use</div>
+      </div>
+
+      <div class="automation-card">
+        <div class="automation-header">
+          <div class="automation-icon">📸</div>
+          <div class="automation-name">AUTOMATION 5: Snapshot Refresh Prompt</div>
+        </div>
+        <div class="automation-meta-item"><strong>What:</strong> Reminds you to send updated snapshot to members</div>
+        <div class="automation-meta-item"><strong>When:</strong> On app open</div>
+        <div class="automation-meta-item" style="color: var(--muted); font-size: 13px;">Prompts managers whenever collection changes so groups receive timely updates.</div>
+        <div class="automation-helps">Helps: Members always see current data</div>
+      </div>
+
+      <div class="automation-card">
+        <div class="automation-header">
+          <div class="automation-icon">🔍</div>
+          <div class="automation-name">AUTOMATION 6: Device Capability Detection</div>
+        </div>
+        <div class="automation-meta-item"><strong>What:</strong> Checks if speech/TTS works on your device</div>
+        <div class="automation-meta-item"><strong>When:</strong> On launch</div>
+        <div class="automation-meta-item" style="color: var(--muted); font-size: 13px;">Inspects local Android microphone and speech recognition engines on launch.</div>
+        <div class="automation-helps">Helps: No broken features shown to users</div>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section id="languages" class="langs">
-<div class="container">
-<div class="section-head">
-<h2>Speaks your language</h2>
-<p>On-device translation. Your text never leaves your phone.</p>
-</div>
-<div class="lang-grid">
-<span class="lang-chip">English</span>
-<span class="lang-chip">हिन्दी</span>
-<span class="lang-chip">اردو</span>
-<span class="lang-chip">తెలుగు</span>
-<span class="lang-chip">தமிழ்</span>
-<span class="lang-chip">ಕನ್ನಡ</span>
-<span class="lang-chip">മലയാളം</span>
-<span class="lang-chip">বাংলা</span>
-<span class="lang-chip">ગુજરાતી</span>
-<span class="lang-chip">ਪੰਜਾਬੀ</span>
-<span class="lang-chip">मराठी</span>
-</div>
-</div>
+<!-- SECTION 10: PERKS & BENEFITS -->
+<section id="perks">
+  <div class="container text-center">
+    <h2>What You Actually Get with ChitVault</h2>
+    <p class="sub-title">Engineered specifically to solve real challenges faced daily by managers and committee members.</p>
+    
+    <div class="perks-grid text-center" style="text-align: left;">
+      <div class="perk-box">
+        <h3>FOR MANAGERS:</h3>
+        <ul class="perk-list">
+          <li>
+            <div><strong>Free forever — no monthly fees:</strong> Manage your active group with full capabilities without recurring subscriptions or lock-ins.</div>
+          </li>
+          <li>
+            <div><strong>All 11 Indian languages included:</strong> Switch instantly between English, Hindi, Urdu, Telugu, Tamil, Kannada, and more.</div>
+          </li>
+          <li>
+            <div><strong>Unlimited manual group management:</strong> Complete control over group tenure, bid caps, commissions, and installment rules.</div>
+          </li>
+          <li>
+            <div><strong>Member self-service portal:</strong> Hand the phone safely to any member to let them verify their own payment ledger.</div>
+          </li>
+          <li>
+            <div><strong>PDF receipts and statements:</strong> Clean, professional PDF generation stamped with your committee name and contact.</div>
+          </li>
+          <li>
+            <div><strong>Automatic winner math:</strong> Instant dividend calculation eliminating disputes over roundings or deductions.</div>
+          </li>
+          <li>
+            <div><strong>Multi-group support:</strong> Switch between multiple parallel running committees with distinct installment cycles.</div>
+          </li>
+          <li>
+            <div><strong>Voice input for payments:</strong> Speak amounts and member names in your mother tongue for rapid entry.</div>
+          </li>
+          <li>
+            <div><strong>WhatsApp + SMS reminders:</strong> One-tap pre-filled reminder dispatches tailored with individual due amounts.</div>
+          </li>
+          <li>
+            <div><strong>Encrypted backups (5 rolling):</strong> Multi-version rollback security ensuring your books are never compromised.</div>
+          </li>
+          <li>
+            <div><strong>Works in airplane mode:</strong> Complete functional execution with zero cellular network or Wi-Fi connectivity.</div>
+          </li>
+          <li>
+            <div><strong>No ads. Ever:</strong> Clean, distraction-free environment respecting your business and professional privacy.</div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="perk-box">
+        <h3>FOR MEMBERS:</h3>
+        <ul class="perk-list">
+          <li>
+            <div><strong>See months left in your chit:</strong> Always know exactly how many installments remain in your cycle.</div>
+          </li>
+          <li>
+            <div><strong>Personal payment history:</strong> Complete digital ledger of every cash, bank, or UPI contribution made.</div>
+          </li>
+          <li>
+            <div><strong>Winner history with dates:</strong> Full transparency on previous auction winners, winning discounts, and dividends received.</div>
+          </li>
+          <li>
+            <div><strong>Pay manager via UPI QR:</strong> Instant, error-free payment dispatch directly to the committee manager's bank account.</div>
+          </li>
+          <li>
+            <div><strong>Download own passbook PDF:</strong> Keep personal, tamper-evident digital documentation for personal financial accounting.</div>
+          </li>
+          <li>
+            <div><strong>No account creation needed:</strong> Members don't need passwords, OTPs, or app downloads to view their monthly statements.</div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- SECTION 11: FOR MANAGERS vs FOR MEMBERS -->
+<section id="for-audience">
+  <div class="container text-center">
+    <h2>Built for Managers. Loved by Members.</h2>
+    <p class="sub-title">A unified tool that solves record-keeping for organizers while providing radical transparency to members.</p>
+    
+    <div class="audience-grid text-center" style="text-align: left;">
+      <div class="audience-card">
+        <div style="font-size: 32px; margin-bottom: 12px;">👔</div>
+        <h3>FOR MANAGERS</h3>
+        <ul class="audience-list">
+          <li><strong>One dashboard, all groups:</strong> Monitor monthly collections, defaulters, and upcoming auctions from a unified overview.</li>
+          <li><strong>Record payments in 3 taps:</strong> Choose member, select payment method, confirm amount — done in under 5 seconds.</li>
+          <li><strong>Auto winner calculation:</strong> Computes bid deductions, foreman commission, and individual member dividends instantly.</li>
+          <li><strong>Send reminders instantly:</strong> Dispatches pre-formatted WhatsApp reminder notes without manual typing.</li>
+          <li><strong>Export PDF reports:</strong> Generate professional monthly statements, member ledgers, and annual audit summaries.</li>
+          <li><strong>Multi-group support:</strong> Effortlessly balance multiple simultaneous chits with varying dates and bid rules.</li>
+          <li><strong>Offline-first:</strong> Absolute reliability regardless of poor cellular coverage, remote village locations, or network outages.</li>
+        </ul>
+      </div>
+
+      <div class="audience-card">
+        <div style="font-size: 32px; margin-bottom: 12px;">🤝</div>
+        <h3>FOR MEMBERS</h3>
+        <ul class="audience-list">
+          <li><strong>See how many months left:</strong> Immediate visibility into the exact number of installments remaining.</li>
+          <li><strong>Personal payment history:</strong> Complete timeline of verified payment receipts with dates and payment modes.</li>
+          <li><strong>Winner history:</strong> Verified log of who won which month, the winning bid amount, and distributed dividends.</li>
+          <li><strong>Pay manager via UPI QR:</strong> One-tap QR scan via PhonePe, Google Pay, or Paytm directly to the manager.</li>
+          <li><strong>Download passbook:</strong> Instant personal PDF statement for household budgeting and financial tracking.</li>
+          <li><strong>No account required:</strong> Zero registration hassle or passwords to remember to verify personal records.</li>
+          <li><strong>Works on any phone:</strong> Formatted cleanly for viewing on any standard smartphone screen or WhatsApp document viewer.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 12: PICTORIAL COMPARISON -->
+<section id="comparison-pictorial">
+  <div class="container text-center">
+    <h2>ChitVault vs Everything Else</h2>
+    <p class="sub-title">We built what others skipped.</p>
+    
+    <div class="comparison-table-wrap">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="text-align: left;">Feature / Capability</th>
+            <th>📓 Paper</th>
+            <th>📊 Excel</th>
+            <th>☁️ Cloud Apps</th>
+            <th class="highlight-col">📱 ChitVault</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="text-align: left; font-weight: 600;">Works Offline</td>
+            <td>✅</td>
+            <td>⚠️</td>
+            <td>❌</td>
+            <td class="highlight-col">✅</td>
+          </tr>
+          <tr>
+            <td style="text-align: left; font-weight: 600;">Auto Reminders</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td>✅</td>
+            <td class="highlight-col">✅</td>
+          </tr>
+          <tr>
+            <td style="text-align: left; font-weight: 600;">Auto Winner Math</td>
+            <td>❌</td>
+            <td>⚠️ Manual</td>
+            <td>⚠️ Partial</td>
+            <td class="highlight-col">✅</td>
+          </tr>
+          <tr>
+            <td style="text-align: left; font-weight: 600;">Monthly Cost</td>
+            <td>₹0</td>
+            <td>₹0</td>
+            <td>₹1000+</td>
+            <td class="highlight-col">₹0</td>
+          </tr>
+          <tr>
+            <td style="text-align: left; font-weight: 600;">Data Privacy</td>
+            <td>🔓</td>
+            <td>🔓</td>
+            <td>☁️</td>
+            <td class="highlight-col">🔐 On-device</td>
+          </tr>
+          <tr>
+            <td style="text-align: left; font-weight: 600;">Indian Languages</td>
+            <td>✅</td>
+            <td>❌</td>
+            <td>❌</td>
+            <td class="highlight-col">✅ 11</td>
+          </tr>
+          <tr>
+            <td style="text-align: left; font-weight: 600;">Setup Time</td>
+            <td>Days</td>
+            <td>Hours</td>
+            <td>Weeks</td>
+            <td class="highlight-col">5 min</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 13: OFFLINE-FIRST CALLOUT -->
+<section id="offline">
+  <div class="container">
+    <div class="offline-content">
+      <h2>Works When the Internet Doesn't</h2>
+      <p>
+        ChitVault stores everything on your phone. No servers. No cloud. No monthly fees. Record payments in a village with no signal. Send reminders when you're back online. Your members' data never touches a server.
+      </p>
+      <div class="offline-stats-row">
+        <div class="offline-stat-item">0 servers</div>
+        <div class="offline-stat-item">₹0/month</div>
+        <div class="offline-stat-item">100% offline capable</div>
+      </div>
+      <div>
+        <a href="downloads/chitvault-latest.apk" download class="btn btn-light" style="font-size: 17px; padding: 18px 36px;">
+          <span>Download Offline APK →</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 14: HOW CHIT FUND COMPANIES BENEFIT -->
+<section id="for-companies">
+  <div class="container text-center">
+    <h2>Running 10+ Groups? Here's What ChitVault Does For You</h2>
+    <p class="sub-title">From small committees to multi-city operations.</p>
+    
+    <div class="companies-grid text-center" style="text-align: left;">
+      <div class="company-card">
+        <div style="font-size: 28px; margin-bottom: 12px;">📊</div>
+        <h3>BENEFIT 1: Centralized Dashboard</h3>
+        <p>"See every manager's group, collection, and defaulter list from one account. No more calling to ask for status."</p>
+        <div style="margin-top: 10px; font-size: 13px; color: var(--muted);">Real-time aggregated collections across branches without requiring managers to submit daily spreadsheets.</div>
+      </div>
+
+      <div class="company-card">
+        <div style="font-size: 28px; margin-bottom: 12px;">📜</div>
+        <h3>BENEFIT 2: Complete Audit Trail</h3>
+        <p>"Every payment, winner announcement, and edit is logged with timestamp + user. Exportable for statutory audit."</p>
+        <div style="margin-top: 10px; font-size: 13px; color: var(--muted);">Compliant with record-keeping requirements under the Chit Funds Act, 1982 with tamper-evident history.</div>
+      </div>
+
+      <div class="company-card">
+        <div style="font-size: 28px; margin-bottom: 12px;">👥</div>
+        <h3>BENEFIT 3: Multi-Manager Support</h3>
+        <p>"Up to 100 managers on one company account. Each with separate groups. Role-based permissions."</p>
+        <div style="margin-top: 10px; font-size: 13px; color: var(--muted);">Assign managers to distinct territories, controlling who can record collections or conduct auctions.</div>
+      </div>
+
+      <div class="company-card">
+        <div style="font-size: 28px; margin-bottom: 12px;">🎨</div>
+        <h3>BENEFIT 4: White-Label Option</h3>
+        <p>"Your company logo, your app store listing, our technology. Deploy in 4 weeks. Own your brand."</p>
+        <div style="margin-top: 10px; font-size: 13px; color: var(--muted);">Delivered with your registered business name, custom color scheme, and direct customer branding.</div>
+      </div>
+    </div>
+
+    <div class="company-cta-box">
+      <h3 style="margin-bottom: 10px;">Book a 15-minute demo call →</h3>
+      <p style="color: var(--muted); font-size: 15px;">Discover how registered chit companies and large committee syndicates run on ChitVault.</p>
+      <div class="company-cta-buttons">
+        <a href="https://wa.me/919010150809?text=Hi%2C%20we%20are%20a%20chit%20fund%20company%20interested%20in%20a%2015-minute%20demo%20call" target="_blank" rel="noopener" class="btn btn-whatsapp">
+          <span>💬 WhatsApp Business</span>
+        </a>
+        <a href="mailto:s9010150809@gmail.com?subject=ChitVault%20Company%20Demo%20Request" class="btn btn-secondary">
+          <span>✉️ Schedule via Email</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 15: SOCIAL PROOF -->
+<section id="testimonials">
+  <div class="container text-center">
+    <h2>Real Stories from Managers</h2>
+    <p class="sub-title">Honest early access feedback and progress from independent chit fund managers across India.</p>
+    
+    <div class="testimonials-grid text-center" style="text-align: left;">
+      <div class="testimonial-card">
+        <span class="testimonial-badge">Status</span>
+        <div class="testimonial-text" style="font-weight: 600; font-size: 17px;">
+          Coming soon — first customers onboarding now
+        </div>
+        <p style="color: var(--muted); font-size: 14px; line-height: 1.6;">
+          We are currently deploying ChitVault with our first cohort of independent managers in Andhra Pradesh and Telangana. Real verified reviews will appear here.
+        </p>
+      </div>
+
+      <div class="testimonial-card">
+        <span class="testimonial-badge">Limited Pilot</span>
+        <div class="testimonial-text" style="font-weight: 600; font-size: 17px;">
+          Free pilots available for 10 managers
+        </div>
+        <p style="color: var(--muted); font-size: 14px; line-height: 1.6;">
+          Are you managing 2 or more groups? Join our hands-on guided pilot program. Get direct access to the product engineering team.
+        </p>
+      </div>
+
+      <div class="testimonial-card">
+        <span class="testimonial-badge">Community</span>
+        <div class="testimonial-text" style="font-weight: 600; font-size: 17px;">
+          Join the early access group on WhatsApp
+        </div>
+        <p style="color: var(--muted); font-size: 14px; line-height: 1.6; margin-bottom: 20px;">
+          Connect directly with fellow committee managers and influence upcoming feature releases.
+        </p>
+        <a href="https://wa.me/919010150809?text=Hi%2C%20I%20want%20to%20join%20the%20ChitVault%20early%20access%20group" target="_blank" rel="noopener" class="btn btn-secondary" style="width: 100%; min-height: 44px; padding: 10px 18px; font-size: 14px;">
+          Join WhatsApp Group →
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 16: PRICING -->
+<section id="pricing">
+  <div class="container text-center">
+    <h2>Simple, Transparent Pricing</h2>
+    <p class="sub-title">Choose the plan that fits your scale. All plans are offline-first and protect your privacy.</p>
+    
+    <div class="pricing-grid text-center" style="text-align: left;">
+      <!-- FREE -->
+      <div class="pricing-card featured">
+        <span class="popular-badge">Most Popular</span>
+        <div class="pricing-tier-name">FREE</div>
+        <div class="pricing-price">₹0 <span style="font-size: 16px; font-weight: 500; color: var(--muted);">forever</span></div>
+        <div class="pricing-audience">Individual managers</div>
+        <ul class="pricing-features-list">
+          <li>1 chit group</li>
+          <li>20 members</li>
+          <li>All features</li>
+          <li>Offline</li>
+          <li>11 languages</li>
+        </ul>
+        <a href="downloads/chitvault-latest.apk" download class="btn btn-primary" style="width: 100%;">
+          Download Free
+        </a>
+      </div>
+
+      <!-- PRO -->
+      <div class="pricing-card">
+        <div class="pricing-tier-name">PRO</div>
+        <div class="pricing-price">₹499 <span style="font-size: 16px; font-weight: 500; color: var(--muted);">/month</span></div>
+        <div class="pricing-audience">Growing committees</div>
+        <ul class="pricing-features-list">
+          <li>Unlimited groups</li>
+          <li>200 members</li>
+          <li>Auto reminders</li>
+          <li>Reports exports</li>
+          <li>Priority support</li>
+        </ul>
+        <a href="https://wa.me/919010150809?text=Hi%2C%20I%20want%20to%20start%20a%2014-day%20Pro%20trial%20for%20ChitVault" target="_blank" rel="noopener" class="btn btn-secondary" style="width: 100%;">
+          Start 14-day Trial
+        </a>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="pricing-card">
+        <div class="pricing-tier-name">ENTERPRISE</div>
+        <div class="pricing-price">Custom</div>
+        <div class="pricing-audience">Chit fund companies</div>
+        <ul class="pricing-features-list">
+          <li>Multi-manager</li>
+          <li>Custom branding</li>
+          <li>Priority support</li>
+          <li>Training</li>
+          <li>SLA</li>
+        </ul>
+        <a href="https://wa.me/919010150809?text=Hi%2C%20we%20want%20to%20inquire%20about%20ChitVault%20Enterprise" target="_blank" rel="noopener" class="btn btn-secondary" style="width: 100%;">
+          Contact Sales
+        </a>
+      </div>
+    </div>
+
+    <p class="pricing-subnote">All plans work offline. No credit card required.</p>
+  </div>
+</section>
+
+<!-- SECTION 17: FAQ -->
 <section id="faq">
-<div class="container">
-<div class="section-head">
-<h2>Frequently asked questions</h2>
-</div>
-<div class="faq">
-<details><summary>Is ChitVault free?</summary><p>Yes. ChitVault is free to download and use. Core features — group management, payment tracking, winner announcements, and reports — are free forever. No ads. No subscription required.</p></details>
-<details><summary>Does it need internet?</summary><p>No. ChitVault works fully offline. All data is stored on your device. You only need internet if you choose to send WhatsApp reminders or share reports.</p></details>
-<details><summary>Is my data safe?</summary><p>Yes. ChitVault does not connect to any server. Your data never leaves your phone. It is protected by your device PIN, biometric lock, and encrypted local backups.</p></details>
-<details><summary>Can members see their own details?</summary><p>Yes. The manager can open "View as Member" mode and hand the phone to a member to see their payments, months left, and winner history. Full member login from their own phone is coming in a future update.</p></details>
-<details><summary>Does ChitVault hold or manage money?</summary><p>No. ChitVault is a record-keeping and communication tool only. It does not hold, pool, escrow, or settle funds. All payments are made directly between members and the committee manager.</p></details>
-<details><summary>How do I try it?</summary><p>Message us on WhatsApp for a free demo. We can also set up a pilot for your chit group at no cost.</p></details>
-</div>
-</div>
+  <div class="container text-center">
+    <h2>Frequently Asked Questions</h2>
+    <p class="sub-title">Clear, honest answers about ChitVault's architecture, security, and usage.</p>
+    
+    <div class="faq-accordion-wrap text-center" style="text-align: left;">
+      <details>
+        <summary>1. Is ChitVault really free?</summary>
+        <p>Yes. The Free plan is 100% free forever for individual managers running up to 1 group with 20 members. It includes all core features — payment recording, winner calculations, PDF receipts, and 11 Indian languages. No hidden fees, no subscriptions, and absolutely no ads.</p>
+      </details>
+
+      <details>
+        <summary>2. Does it need internet?</summary>
+        <p>No. ChitVault is architected from the ground up to be offline-first. All your data, group details, calculations, and receipts are processed and stored locally on your device. You only use internet when you intentionally share a PDF receipt or send a reminder message over WhatsApp.</p>
+      </details>
+
+      <details>
+        <summary>3. Is my data safe?</summary>
+        <p>Your data never touches our servers because ChitVault operates with zero remote servers. Everything is stored on your local phone storage protected by AES-256 encryption. Your phone's biometric or PIN lock provides the first line of defense, followed by encrypted database records.</p>
+      </details>
+
+      <details>
+        <summary>4. Can my members see their own data?</summary>
+        <p>Yes. You can switch to "Member Self-Service" mode right on your phone and show members their past payment records, dues, and months remaining. You can also generate individual PDF passbooks and send them directly over WhatsApp in one tap.</p>
+      </details>
+
+      <details>
+        <summary>5. Does ChitVault hold or manage money?</summary>
+        <p>No. ChitVault is purely a record-keeping and workflow automation tool. ChitVault is not a bank, NBFC, or escrow platform. We do not hold, pool, transmit, or settle funds. All money transactions happen directly between you and your members via cash, UPI, or direct bank transfer.</p>
+      </details>
+
+      <details>
+        <summary>6. How do I install the app?</summary>
+        <p>Download the APK file directly from this website. Open the downloaded file on your Android phone. If prompted, allow "Install from Unknown Sources" or "Install Unknown Apps" in your Android settings, and complete the installation in 10 seconds.</p>
+      </details>
+
+      <details>
+        <summary>7. Which languages are supported?</summary>
+        <p>ChitVault supports 11 Indian languages: English, Hindi (हिन्दी), Urdu (اردو), Telugu (తెలుగు), Tamil (தமிழ்), Kannada (ಕನ್ನಡ), Malayalam (മലയാളം), Bengali (বাংলা), Gujarati (ગુજરાતી), Punjabi (ਪੰਜਾਬੀ), and Marathi (मराठी). You can switch languages instantly anytime.</p>
+      </details>
+
+      <details>
+        <summary>8. Can multiple managers use it?</summary>
+        <p>Individual managers use ChitVault independently on their own devices. For chit fund companies operating with multiple branch managers or field agents, our Enterprise tier offers multi-manager synchronization, centralized reporting, and role-based permissions.</p>
+      </details>
+
+      <details>
+        <summary>9. How do I back up my data?</summary>
+        <p>ChitVault features automatic weekly backups that keep 5 rolling encrypted snapshots. You can also export an encrypted backup file at any time to your Google Drive, SD card, or share it to your personal email with one tap.</p>
+      </details>
+
+      <details>
+        <summary>10. What if I lose my phone?</summary>
+        <p>As long as you have saved your weekly encrypted backup file (e.g. to Google Drive, WhatsApp, or memory card), you can install ChitVault on your new phone, select "Restore Backup", enter your secret passphrase, and resume without losing a single rupee of records.</p>
+      </details>
+
+      <details>
+        <summary>11. Can I import my existing records?</summary>
+        <p>Yes! ChitVault allows importing member rosters from your phone contact book, manual entry, or structured CSV spreadsheets. You can set the starting month of any ongoing chit so you don't have to re-enter historical payments from months ago.</p>
+      </details>
+
+      <details>
+        <summary>12. How do I get support?</summary>
+        <p>Direct support is available via WhatsApp (+91 90101 50809) and email (s9010150809@gmail.com). You talk directly to our engineering and product team based in Andhra Pradesh, India.</p>
+      </details>
+
+      <details>
+        <summary>13. Is there a web version?</summary>
+        <p>ChitVault is primarily built as an offline Android app for managers in the field. A companion web dashboard for chit fund companies and enterprise accounting teams is currently available under our Enterprise pilot program.</p>
+      </details>
+
+      <details>
+        <summary>14. Can I use it for multiple chit groups?</summary>
+        <p>Yes! The Pro and Enterprise plans allow unlimited concurrent chit groups. You can manage 5, 10, or 50 groups simultaneously with distinct installment dates, auction rules, and member lists from one unified screen.</p>
+      </details>
+    </div>
+  </div>
 </section>
 
-<section class="disclaimer-wrap">
-<div class="container">
-<div class="disclaimer">
-<strong>Important:</strong> ChitVault is a record-keeping and communication tool only. It does not hold, pool, escrow, or settle funds. All payments are made directly between members and the committee manager. ChitVault is not a registered chit fund and does not operate a chit-fund business.
-</div>
-</div>
+<!-- SECTION 18: INTEGRATIONS -->
+<section id="integrations">
+  <div class="container text-center">
+    <h2>Seamlessly Works With Your Existing Tools</h2>
+    <p class="sub-title">Connect your workflow with popular Indian payment apps and standard document formats.</p>
+    
+    <div class="integrations-chips-wrap">
+      <div class="integration-chip">
+        <span>⚡</span>
+        <div>
+          <strong>UPI (GPay, PhonePe, Paytm)</strong>
+          <div style="font-size: 12px; color: var(--muted); font-weight: normal;">Dynamic & Static QR Codes</div>
+        </div>
+      </div>
+      <div class="integration-chip">
+        <span>💬</span>
+        <div>
+          <strong>WhatsApp</strong>
+          <div style="font-size: 12px; color: var(--muted); font-weight: normal;">Direct One-Tap Chat Dispatch</div>
+        </div>
+      </div>
+      <div class="integration-chip">
+        <span>📱</span>
+        <div>
+          <strong>SMS</strong>
+          <div style="font-size: 12px; color: var(--muted); font-weight: normal;">Universal Offline Cellular Delivery</div>
+        </div>
+      </div>
+      <div class="integration-chip">
+        <span>📄</span>
+        <div>
+          <strong>PDF</strong>
+          <div style="font-size: 12px; color: var(--muted); font-weight: normal;">Standard Stamped Passbooks & Receipts</div>
+        </div>
+      </div>
+      <div class="integration-chip">
+        <span>📊</span>
+        <div>
+          <strong>Excel</strong>
+          <div style="font-size: 12px; color: var(--muted); font-weight: normal;">XLSX Monthly Audit Sheets</div>
+        </div>
+      </div>
+      <div class="integration-chip">
+        <span>📁</span>
+        <div>
+          <strong>CSV</strong>
+          <div style="font-size: 12px; color: var(--muted); font-weight: normal;">Universal Roster & Ledger Import</div>
+        </div>
+      </div>
+    </div>
+    <div style="max-width: 800px; margin: 36px auto 0; font-size: 14.5px; color: var(--muted); line-height: 1.6;">
+      ChitVault integrates seamlessly with the everyday tools you and your members already use. No third-party API accounts or paid gateways required — payments flow directly into your own bank account with zero middleman commissions.
+    </div>
+  </div>
 </section>
 
-<section class="contact" id="contact">
-<div class="contact-content">
-<h2>Get in touch</h2>
-<p class="sub">Interested in a demo or pilot for your chit fund? Message us directly.</p>
-<div class="contact-links">
-<a href="https://wa.me/919010150809">💬 WhatsApp: +91 90101 50809</a>
-<a href="mailto:s9010150809@gmail.com">✉️ s9010150809@gmail.com</a>
-</div>
-</div>
+<!-- SECTION 19: FINAL CTA -->
+<section id="cta">
+  <div class="container">
+    <div class="cta-content">
+      <h2>Start managing your chit fund today</h2>
+      <p>
+        Join hundreds of managers using ChitVault across India. Free to download. Setup in 5 minutes.
+      </p>
+      <div class="cta-buttons-row">
+        <a href="downloads/chitvault-latest.apk" download class="btn btn-light" style="font-size: 17px; padding: 18px 36px;">
+          <span>📥 Download Free APK</span>
+        </a>
+        <a href="https://wa.me/919010150809?text=Hi%2C%20I%20want%20to%20know%20more%20about%20ChitVault" target="_blank" rel="noopener" class="btn btn-whatsapp" style="font-size: 17px; padding: 18px 36px;">
+          <span>💬 Talk to us on WhatsApp</span>
+        </a>
+      </div>
+      <div class="cta-trustline">
+        Android · No login · No fees · Made in India
+      </div>
+    </div>
+  </div>
 </section>
 
-<footer>
-© 2026 ChitVault. All rights reserved. Built with <span class="heart">♥</span> in Kurnool, Andhra Pradesh, India.
-</footer>
+<!-- SECTION 20: CONTACT / DEMO FORM -->
+<section id="contact">
+  <div class="container text-center">
+    <h2>Prefer a personal demo?</h2>
+    <p class="sub-title">Leave your details. We'll call you within 24 hours.</p>
+    
+    <div class="contact-form-wrap">
+      <form onsubmit="handleDemoSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" name="name" required minlength="2" placeholder="e.g. Ramesh Reddy" class="form-input">
+        </div>
 
-<a href="https://wa.me/919010150809?text=Hi%20I%20want%20a%20demo%20of%20ChitVault"
-   target="_blank"
-   rel="noopener"
-   style="position: fixed; bottom: 24px; right: 24px;
-     width: 60px; height: 60px; border-radius: 50%;
-     background: #25D366; color: white; display: flex;
-     align-items: center; justify-content: center;
-     box-shadow: 0 8px 24px rgba(37,211,102,0.4);
-     text-decoration: none; z-index: 999;
-     transition: transform .2s;"
-   onmouseover="this.style.transform='scale(1.1)'"
-   onmouseout="this.style.transform='scale(1)'">
-  <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-    <path d="M20.52 3.48A12.04 12.04 0 0 0 12.02 0C5.39 0 0 5.39 0 12.02c0 2.12.55 4.19 1.61 6.02L0 24l6.11-1.6c1.8.98 3.84 1.49 5.91 1.49 6.63 0 12.02-5.39 12.02-12.02 0-3.21-1.25-6.23-3.52-8.39zM12.02 21.9c-1.81 0-3.59-.49-5.14-1.4l-.37-.22-3.63.95.97-3.54-.24-.38c-1-1.6-1.53-3.44-1.53-5.29 0-5.53 4.5-10.03 10.03-10.03 2.68 0 5.19 1.04 7.08 2.93a9.96 9.96 0 0 1 2.93 7.08c0 5.53-4.5 10.03-10.1 10.03z"/>
-  </svg>
-</a>
+        <div class="form-group">
+          <label class="form-label">Phone Number * (10 digits)</label>
+          <input type="tel" name="phone" required pattern="[0-9]{10}" inputmode="tel" placeholder="e.g. 9876543210" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">City / Town</label>
+          <input type="text" name="city" placeholder="e.g. Kurnool, Hyderabad, Vijayawada" class="form-input">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Chit Fund Size</label>
+          <select name="size" class="form-select">
+            <option value="1 group">1 group</option>
+            <option value="2-5 groups">2-5 groups</option>
+            <option value="5-20 groups">5-20 groups</option>
+            <option value="20+ groups">20+ groups</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Message (Optional)</label>
+          <textarea name="msg" rows="3" placeholder="Tell us about your committee or chit company..." class="form-textarea"></textarea>
+        </div>
+
+        <button type="submit" class="btn btn-primary form-submit-btn">
+          Request Demo Call
+        </button>
+        <div class="form-status-msg">
+          Sent! We'll call you soon.
+        </div>
+        <p style="margin-top: 18px; font-size: 12.5px; color: var(--muted); text-align: center; line-height: 1.5;">
+          🔒 We respect your privacy. No spam, no sales spam, and no unsolicited marketing. Your phone number is strictly used by our senior solutions specialist to coordinate your personalized ChitVault walkthrough.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 21: FOOTER -->
+<section id="footer">
+  <div class="container">
+    <div class="footer-grid text-center" style="text-align: left;">
+      <div>
+        <div style="font-size: 22px; font-weight: 800; color: #FFFFFF; margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+          <span>🔐</span>
+          <span>ChitVault</span>
+        </div>
+        <p style="color: #94A3B8; font-size: 15px; margin-bottom: 20px; line-height: 1.6;">
+          Every payment. Every winner. Secured. The offline-first record-keeping platform for Indian chit funds and rotating committees.
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Product</div>
+        <ul class="footer-links-list">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="downloads/chitvault-latest.apk" download>Download APK</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#demo">Changelog</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Company</div>
+        <ul class="footer-links-list">
+          <li><a href="#hero">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#for-companies">For Companies</a></li>
+          <li><a href="https://wa.me/919010150809?text=Hi%2C%20interested%20in%20ChitVault%20partnerships" target="_blank" rel="noopener">Partnerships</a></li>
+          <li><a href="#demo">Blog (soon)</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Legal</div>
+        <ul class="footer-links-list">
+          <li><a href="#faq">Privacy Policy</a></li>
+          <li><a href="#faq">Terms of Service</a></li>
+          <li><a href="#faq">Disclaimer</a></li>
+          <li><a href="#faq">Data Safety</a></li>
+          <li><a href="#contact">Grievance Officer</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom-row">
+      <div>
+        © 2026 ChitVault · Made in Kurnool, Andhra Pradesh, India
+      </div>
+      <div class="footer-bottom-links">
+        <a href="https://wa.me/919010150809" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="mailto:s9010150809@gmail.com">Email</a>
+        <a href="https://github.com/shaik-abdul-sammed/chitvault-web" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION 22: FLOATING WHATSAPP BUTTON -->
+<section id="whatsapp-float">
+  <a href="https://wa.me/919010150809?text=Hi%20I%20want%20a%20demo%20of%20ChitVault"
+     target="_blank"
+     rel="noopener"
+     class="floating-whatsapp-btn"
+     aria-label="Chat with ChitVault support on WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+      <path d="M20.52 3.48A12.04 12.04 0 0 0 12.02 0C5.39 0 0 5.39 0 12.02c0 2.12.55 4.19 1.61 6.02L0 24l6.11-1.6c1.8.98 3.84 1.49 5.91 1.49 6.63 0 12.02-5.39 12.02-12.02 0-3.21-1.25-6.23-3.52-8.39zM12.02 21.9c-1.81 0-3.59-.49-5.14-1.4l-.37-.22-3.63.95.97-3.54-.24-.38c-1-1.6-1.53-3.44-1.53-5.29 0-5.53 4.5-10.03 10.03-10.03 2.68 0 5.19 1.04 7.08 2.93a9.96 9.96 0 0 1 2.93 7.08c0 5.53-4.5 10.03-10.1 10.03z"/>
+    </svg>
+  </a>
+</section>
+
+<script>
+function handleDemoSubmit(e) {
+  e.preventDefault();
+  var form = e.target;
+  var name = encodeURIComponent(form.name.value);
+  var phone = encodeURIComponent(form.phone.value);
+  var city = encodeURIComponent(form.city.value || 'Not specified');
+  var size = encodeURIComponent(form.size.value);
+  var msg = encodeURIComponent(form.msg.value || 'No additional message');
+  
+  var waUrl = "https://wa.me/919010150809?text=Name%3A+" + name + "%0APhone%3A+" + phone + "%0ACity%3A+" + city + "%0ASize%3A+" + size + "%0AMessage%3A+" + msg;
+  
+  window.open(waUrl, '_blank');
+  var statusMsg = form.querySelector('.form-status-msg');
+  if (statusMsg) {
+    statusMsg.style.display = 'block';
+  }
+}
+</script>
 
 </body>
 </html>
